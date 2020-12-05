@@ -6,8 +6,8 @@ public class Route {
 	private int vehicleNo;
 	private String source;
 	private String destination;
-	private  int distance;
-	private int duration;
+	private  double distance;
+	private double duration;
 	
 	//default constructor
 	public Route() {
@@ -15,7 +15,7 @@ public class Route {
 	}
 
 	//parameterized constructor
-	public Route(int routeId, int vehicleNo, String source, String destination, int distance, int duration) {
+	public Route(int routeId, int vehicleNo, String source, String destination, double distance, double duration) {
 		super();
 		this.routeId = routeId;
 		this.vehicleNo = vehicleNo;
@@ -25,7 +25,7 @@ public class Route {
 		this.duration = duration;
 	}
 
-	public Route(int vehicleNo, String source, String destination, int distance, int duration) {
+	public Route(int vehicleNo, String source, String destination, double distance, double duration) {
 		super();
 		this.vehicleNo = vehicleNo;
 		this.source = source;
@@ -36,7 +36,7 @@ public class Route {
 
 	//getters and setters
 	public int getRouteId() {
-		return routeId;
+		return this.routeId;
 	}
 
 	public void setRouteId(int routeId) {
@@ -44,7 +44,7 @@ public class Route {
 	}
 
 	public int getVehicleNo() {
-		return vehicleNo;
+		return this.vehicleNo;
 	}
 
 	public void setVehicleNo(int vehicleNo) {
@@ -52,7 +52,7 @@ public class Route {
 	}
 
 	public String getSource() {
-		return source;
+		return this.source;
 	}
 
 	public void setSource(String source) {
@@ -60,26 +60,26 @@ public class Route {
 	}
 
 	public String getDestination() {
-		return destination;
+		return this.destination;
 	}
 
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
 
-	public int getDistance() {
-		return distance;
+	public double getDistance() {
+		return this.distance;
 	}
 
-	public void setDistance(int distance) {
+	public void setDistance(double distance) {
 		this.distance = distance;
 	}
 
-	public int getDuration() {
-		return duration;
+	public double getDuration() {
+		return this.duration;
 	}
 
-	public void setDuration(int duration) {
+	public void setDuration(double duration) {
 		this.duration = duration;
 	}
 
@@ -88,5 +88,4 @@ public class Route {
 		return "Route [routeId=" + routeId + ", vehicleNo=" + vehicleNo + ", source=" + source + ", destination="
 				+ destination + ", distance=" + distance + ", duration=" + duration + "]";
 	}	
-	
 }
