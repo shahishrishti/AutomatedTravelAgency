@@ -1,13 +1,9 @@
 package com.capg.travelagency.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -29,12 +25,7 @@ public class DriverEntity {
 	
 	@Column(name = "license_no")
 	private String licenseNo;
-	
-	@OneToOne(cascade={CascadeType.ALL},
-			fetch=FetchType.EAGER, optional = false)
-	@JoinColumn(name = "vehicle_no")
-	private VehicleEntity vehicle;
-	
+		
 	public DriverEntity(int driverId, String name, String address, long contactNo, String licenseNo) {
 		super();
 		this.driverId = driverId;

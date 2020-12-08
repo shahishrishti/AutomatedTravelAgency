@@ -1,6 +1,7 @@
 package com.capg.travelagency.exceptions;
 
-public class BookingNotFoundException extends Exception {
+public class BookingNotFoundException extends Exception{
+
 	private String message;
 	
 	public BookingNotFoundException() {
@@ -11,6 +12,6 @@ public class BookingNotFoundException extends Exception {
 	}
 	@Override
 	public String toString() {
-		return "No such booking " + this.message;
+		return "Invalid route data " + this.message;
 	}
 }

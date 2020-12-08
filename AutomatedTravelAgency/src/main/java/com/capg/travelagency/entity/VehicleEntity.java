@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -18,6 +20,8 @@ import javax.persistence.Table;
 @Table(name = "vehicle")
 public class VehicleEntity {
 
+	@Id
+	@GeneratedValue
 	@Column(name = "vehicle_no")
 	private int vehicleNo;
 	
@@ -30,10 +34,10 @@ public class VehicleEntity {
 	@Column(name = "fare_per_km")
 	private double farePerKm;
 	
-	@Column(name = "seating_capactity")
+	@Column(name = "seating_capacity")
 	private int seatingCapacity;
 
-	@OneToOne(cascade = {CascadeType.ALL},
+	@OneToOne(cascade = {CascadeType.PERSIST},
 			fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "driver_id")
 	private DriverEntity driverEntity;
@@ -61,6 +65,16 @@ public class VehicleEntity {
 	
 
 	public VehicleEntity(String vehicleName, String vehicleType, double farePerKm, int seatingCapacity,
+			DriverEntity driverEntity) {
+		super();
+		this.vehicleName = vehicleName;
+		this.vehicleType = vehicleType;
+		this.farePerKm = farePerKm;
+		this.seatingCapacity = seatingCapacity;
+		this.driverEntity = driverEntity;
+	}
+
+	public VehicleEntity(String vehicleName, String vehicleType, double farePerKm, int seatingCapacity,
 			DriverEntity driverEntity, Set<RouteEntity> routeEntity) {
 		super();
 		this.vehicleName = vehicleName;
@@ -71,6 +85,7 @@ public class VehicleEntity {
 		this.routeEntity = routeEntity;
 	}
 
+	
 	public int getVehicleNo() {
 		return vehicleNo;
 	}

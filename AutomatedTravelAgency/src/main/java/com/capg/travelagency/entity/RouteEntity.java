@@ -22,9 +22,6 @@ public class RouteEntity {
 	@Column(name="route_id")
 	private int routeId;
 	
-	@Column(name="vehicle_no")
-	private int vehicleNo;
-	
 	@Column(name="source")
 	private String source;
 	
@@ -50,18 +47,16 @@ public class RouteEntity {
 	}
 
 	//parameterized constructor
-	public RouteEntity(int routeId, int vehicleNo, String source, String destination, double distance, double duration) {
+	public RouteEntity(int routeId, String source, String destination, double distance, double duration) {
 		super();
 		this.routeId = routeId;
-		this.vehicleNo = vehicleNo;
 		this.source = source;
 		this.destination = destination;
 		this.distance = distance;
 		this.duration = duration;
 	}
 
-	public RouteEntity(int vehicleNo, String source, String destination, double distance, double duration) {
-		this.vehicleNo = vehicleNo;
+	public RouteEntity(String source, String destination, double distance, double duration) {
 		this.source = source;
 		this.destination = destination;
 		this.distance = distance;
@@ -69,10 +64,9 @@ public class RouteEntity {
 	}
 	
 
-	public RouteEntity(int vehicleNo, String source, String destination, double distance, double duration,
+	public RouteEntity(String source, String destination, double distance, double duration,
 			Set<VehicleEntity> vehicleEntity) {
 		super();
-		this.vehicleNo = vehicleNo;
 		this.source = source;
 		this.destination = destination;
 		this.distance = distance;
@@ -87,14 +81,6 @@ public class RouteEntity {
 
 	public void setRouteId(int routeId) {
 		this.routeId = routeId;
-	}
-
-	public int getVehicleNo() {
-		return this.vehicleNo;
-	}
-
-	public void setVehicleNo(int vehicleNo) {
-		this.vehicleNo = vehicleNo;
 	}
 
 	public String getSource() {
@@ -131,7 +117,7 @@ public class RouteEntity {
 
 	@Override
 	public String toString() {
-		return "Route [routeId=" + routeId + ", vehicleNo=" + vehicleNo + ", source=" + source + ", destination="
+		return "Route [routeId=" + routeId + ", source=" + source + ", destination="
 				+ destination + ", distance=" + distance + ", duration=" + duration + "]";
 	}	
 }

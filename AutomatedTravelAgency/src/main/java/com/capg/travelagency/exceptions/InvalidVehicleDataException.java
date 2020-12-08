@@ -1,12 +1,13 @@
 package com.capg.travelagency.exceptions;
 
-public class VehicleNotFoundException extends Exception {
+public class InvalidVehicleDataException extends Exception{
+
 	private String message;
 	
-	public VehicleNotFoundException() {
+	public InvalidVehicleDataException() {
 		this.message = "";
 	}
-	public VehicleNotFoundException(String message) {
+	public InvalidVehicleDataException(String message) {
 		this.message = message;
 	}
 	@Override
