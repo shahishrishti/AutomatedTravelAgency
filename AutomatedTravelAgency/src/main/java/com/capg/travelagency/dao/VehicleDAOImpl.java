@@ -7,6 +7,7 @@ import javax.persistence.Persistence;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.capg.travelagency.dto.Vehicle;
 import com.capg.travelagency.entity.DriverEntity;
 import com.capg.travelagency.entity.VehicleEntity;
 import com.capg.travelagency.exceptions.InvalidDriverDataException;
@@ -42,34 +43,22 @@ public class VehicleDAOImpl implements VehicleDAO {
 		return vehicleEntity;
 	}
 
-	public VehicleEntity modifyVehicle(int vehicleNo, String vehicleName, String vehicleType, double farePerKm, int seatingCapacity,
-			int driverId) throws InvalidVehicleDataException, InvalidDriverDataException {
+	public VehicleEntity modifyVehicle(Vehicle modifiedVehicle) throws InvalidVehicleDataException, InvalidDriverDataException {
 		entityManager.getTransaction().begin();
-		if(vehicleName == null || vehicleType == null || farePerKm <= 0 || seatingCapacity <=0 ) {
+		vehicleEntity = entityManager.find(VehicleEntity.class, modifiedVehicle.getVehicleNo());
+		newDriverEntity = entityManager.find(DriverEntity.class, modifiedVehicle.getDriverId());
+		if(vehicleEntity == null) {
 			entityManager.getTransaction().commit();
-			throw new InvalidVehicleDataException("Either the field is null or less than 0");
-		} else if(vehicleType.equalsIgnoreCase("Car") && seatingCapacity >= 5) {
+			throw new InvalidVehicleDataException("Invalid Vehicle No.: " + modifiedVehicle.getVehicleNo());
+		} else if(newDriverEntity == null) {
 			entityManager.getTransaction().commit();
-			throw new InvalidVehicleDataException("SeatingCapacity of car should be in the range 1 to 4.");
-		} else if(vehicleType.equalsIgnoreCase("Bus") && seatingCapacity >= 21) {
-			entityManager.getTransaction().commit();
-			throw new InvalidVehicleDataException("SeatingCapacity of bus should be in the range 1 to 20.");
+			throw new InvalidDriverDataException("Invalid Driver ID: " + modifiedVehicle.getDriverId());
 		} else {
-			vehicleEntity = entityManager.find(VehicleEntity.class, vehicleNo);
-			newDriverEntity = entityManager.find(DriverEntity.class, driverId);
-			if(vehicleEntity == null) {
-				entityManager.getTransaction().commit();
-				throw new InvalidVehicleDataException("Invalid Vehicle No.: " + vehicleNo);
-			} else if(newDriverEntity == null) {
-				entityManager.getTransaction().commit();
-				throw new InvalidDriverDataException("Invalid Driver ID: " + driverId);
-			} else {
-				vehicleEntity.setVehicleName(vehicleName);
-				vehicleEntity.setVehicleType(vehicleType);
-				vehicleEntity.setFarePerKm(farePerKm);
-				vehicleEntity.setSeatingCapacity(seatingCapacity);
-				vehicleEntity.setDriverEntity(newDriverEntity);
-			}
+			vehicleEntity.setVehicleName(modifiedVehicle.getVehicleName());
+			vehicleEntity.setVehicleType(modifiedVehicle.getVehicleType());
+			vehicleEntity.setFarePerKm(modifiedVehicle.getFarePerKm());
+			vehicleEntity.setSeatingCapacity(modifiedVehicle.getSeatingCapacity());
+			vehicleEntity.setDriverEntity(newDriverEntity);
 			entityManager.getTransaction().commit();
 			logger.info("Updated vehicleEntity: " + vehicleEntity);
 		}

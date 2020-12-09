@@ -86,6 +86,10 @@ public class VehicleEntity {
 	}
 
 	
+	public VehicleEntity(int i, String string, String string2, double d, int j, int k) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getVehicleNo() {
 		return vehicleNo;
 	}

@@ -16,11 +16,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "booking")
-@NamedQueries({
-	@NamedQuery(name = "READ_ALL_BOOKINGS", 
-	query =
-	"SELECT b.vehicle_id, b.booking_id,b.booking_date,b.journey_date,b.boarding_point,b.drop_point,b.mobile_no from Booking b"),
-})
+//@NamedQueries({
+//	@NamedQuery(name = "READ_ALL_BOOKINGS", 
+//	query =
+//	"SELECT b.vehicle_id, b.booking_id,b.booking_date,b.journey_date,b.boarding_point,b.drop_point,b.mobile_no from Booking b")
+//})
 public class BookingEntity {
 	
 	
