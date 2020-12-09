@@ -27,4 +27,16 @@ public class RouteServiceImplementation implements RouteService {
 		return RouteUtils.convertRouteEntityIntoRoute(routeEntity);		
 	}
 
+	public Route deleteRoute(int routeId) throws InvalidRouteDataException {
+		RouteEntity routeEntity = routeDao.deleteRoute(routeId);
+		logger.info("routeEntity: " + routeEntity);
+		return RouteUtils.convertRouteEntityIntoRoute(routeEntity);		
+	}
+
+	public Route modifyRoute(Route modifiedRoute) throws InvalidRouteDataException, InvalidVehicleDataException {
+		RouteEntity routeEntity = routeDao.modifyRoute(modifiedRoute);
+		logger.info("routeEntity: " + routeEntity);
+		return RouteUtils.convertRouteEntityIntoRoute(routeEntity);
+	}
+
 }

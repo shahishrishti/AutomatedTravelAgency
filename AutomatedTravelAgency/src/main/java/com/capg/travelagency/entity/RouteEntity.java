@@ -123,7 +123,8 @@ public class RouteEntity {
 
 	@Override
 	public String toString() {
-		return "Route [routeId=" + routeId + ", source=" + source + ", destination="
-				+ destination + ", distance=" + distance + ", duration=" + duration + "]";
-	}	
+		return "RouteEntity [routeId=" + routeId + ", source=" + source + ", destination=" + destination + ", distance="
+				+ distance + ", duration=" + duration + ", vehicleEntity=" + vehicleEntity + "]";
+	}
+	
 }

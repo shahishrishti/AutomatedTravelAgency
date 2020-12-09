@@ -85,7 +85,8 @@ public class Route {
 
 	@Override
 	public String toString() {
-		return "Route [routeId=" + routeId + ", source=" + source + ", destination="
-				+ destination + ", distance=" + distance + ", duration=" + duration + "]";
-	}	
+		return "Route [routeId=" + routeId + ", source=" + source + ", destination=" + destination + ", distance="
+				+ distance + ", duration=" + duration + ", vehicleNo=" + vehicleNo + "]";
+	}
+
 }

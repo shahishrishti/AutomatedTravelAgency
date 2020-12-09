@@ -8,4 +8,6 @@ import com.capg.travelagency.exceptions.InvalidVehicleDataException;
 public interface RouteDAO {
 	public RouteEntity viewRouteByID(int routeID) throws InvalidRouteDataException;
 	public RouteEntity addRoute(Route addedRoute)  throws InvalidRouteDataException, InvalidVehicleDataException;
+	public RouteEntity deleteRoute(int routeId) throws InvalidRouteDataException;
+	public RouteEntity modifyRoute(Route modifiedRoute)	throws InvalidRouteDataException, InvalidVehicleDataException;
 }

@@ -8,7 +8,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.capg.travelagency.dto.Route;
-import com.capg.travelagency.exceptions.InvalidDriverDataException;
 import com.capg.travelagency.exceptions.InvalidRouteDataException;
 import com.capg.travelagency.exceptions.InvalidVehicleDataException;
 
@@ -21,7 +20,7 @@ public class RouteControllerTest {
 		logger = LogManager.getLogger(RouteControllerTest.class.getName());
 		routeController = new RouteController();
 	}
-	
+
 	@Test
 	public void testAddRouteValidSource() throws InvalidVehicleDataException, InvalidRouteDataException{
 		
@@ -110,5 +109,119 @@ public class RouteControllerTest {
 		assertNotNull("View Vehicle here ", routeController.viewRouteById(2));
 		logger.info("[end] testViewRouteValidRouteId()");
 	}
+
+
+	@Test(expected = InvalidRouteDataException.class)
+	public void testDeleteRouteInvalidRouteId() throws InvalidRouteDataException {
+		logger.info("[start] testDeleteRouteInvalidRouteId()");
+		routeController.deleteRoute(-11);
+		logger.info("[end] testDeleteRouteInvalidRouteId()");
+	}
 	
+	@Test
+	public void testDeleteRouteValidRouteId() throws InvalidRouteDataException {
+		logger.info("[start] testDeleteRouteValidRouteId()");
+		assertNotNull("Route Found to be deleted", routeController.deleteRoute(35));
+		logger.info("[end] testDeleteRouteValidRouteId()");
+	}
+	
+	@Test(expected = InvalidRouteDataException.class)
+	public void testModifyRouteInvalidRouteId() throws InvalidRouteDataException, InvalidVehicleDataException {
+		logger.info("[start] testModifyRouteInvalidRouteId()");
+		Route route=new Route(-11, "Bhopal", "Ujjain", 300, 03.50, 8);
+		routeController.modifyRoute(route);
+		logger.error("RouteId cannot be negative or zero");
+		logger.info("[end] testModifyRouteInvalidRouteId()");
+	}
+	
+	@Test
+	public void testModifyRoutevalidRouteId() throws InvalidRouteDataException, InvalidVehicleDataException {
+		logger.info("[start] testModifyRouteValidRouteId()");
+		Route route=new Route(33, "Bhopal", "Indore", 300, 03.50, 8);
+		assertNotNull("Route Found to be Updated", routeController.modifyRoute(route));
+		logger.info("[end] testModifyRouteValidRouteId()");
+	}
+	
+	
+	@Test(expected = InvalidRouteDataException.class)
+	public void testVehicleNoInvalidValue() throws InvalidVehicleDataException, InvalidRouteDataException {
+		logger.info("[start] testVehicleNoInvalidValue()");
+		Route route = new Route(33, "Bhopal", "Indore", 300, 03.50, -1);
+		routeController.modifyRoute(route);
+		logger.error("VehicleNo cannot be negative or zero");
+		logger.info("[end] testVehicleNoInvalidValue()");
+	}
+	
+	@Test
+	public void testVehicleNoValidValue() throws InvalidVehicleDataException, InvalidRouteDataException {
+		logger.info("[start] testVehicleNoValidValue()");
+		Route route = new Route(33, "Bhopal", "Indore", 300, 03.50, 8);
+		assertNotNull("Route Found to be Updated", routeController.modifyRoute(route));
+		logger.info("[end] testSeatingCapacityValidValue()");
+	}
+
+	
+	@Test(expected = InvalidRouteDataException.class)
+	public void testModifyRouteInvalidSource() throws InvalidVehicleDataException, InvalidRouteDataException {
+		logger.info("[start] testModifyRouteInvalidSource()");
+		Route route = new Route(33, null, "Indore", 300, 03.50, 9);
+		routeController.modifyRoute(route);
+		logger.info("[end] testModifyRouteInvalidSource()");
+	}
+	
+	@Test
+	public void testModifyRouteValidSource() throws InvalidVehicleDataException, InvalidRouteDataException {
+		logger.info("[start] testModifyRouteValidRouteId()");
+		Route route=new Route(33, "Bhopal", "Indore", 300, 03.50, 10);
+		assertNotNull("Route Found to be Updated", routeController.modifyRoute(route));
+		logger.info("[end] testModifyRouteValidRouteId()");
+	}
+	
+	@Test(expected = InvalidRouteDataException.class)
+	public void testDistanceInvalidValue() throws InvalidVehicleDataException, InvalidRouteDataException {
+		logger.info("[start] testDistanceInvalidValue()");
+		Route route = new Route(33, "Bhopal", "Indore", -50, 03.50, 10);
+		routeController.modifyRoute(route);
+		logger.info("[end] testDistanceInvalidValue()");
+	}
+	
+	@Test
+	public void testDistanceValidValue() throws InvalidVehicleDataException, InvalidRouteDataException {
+		logger.info("[start] testDistanceValidValue()");
+		Route route = new Route(33, "Bhopal", "Indore", 300, 03.50, 8);
+		assertNotNull("Route Found to be Updated", routeController.modifyRoute(route));
+		logger.info("[end] testSeatingCapacityValidValue()");
+	}
+
+	@Test(expected = InvalidRouteDataException.class)
+	public void testModifyRouteInvalidDestination() throws InvalidRouteDataException, InvalidVehicleDataException {
+		logger.info("[start] testModifyRouteInvalidDestination()");
+		Route route = new Route(33, "Pune", null, 350, 04.00, 8);
+		routeController.modifyRoute(route);
+		logger.info("[end] testModifyRouteInvalidDestination()");
+	}
+	
+	@Test
+	public void testModifyRouteValidDestination() throws InvalidVehicleDataException, InvalidRouteDataException {
+		logger.info("[start] testModifyRouteValidRouteId()");
+		Route route = new Route(33, "Pune", "Mumbai", 350, 04.00, 9);
+		assertNotNull("Route Found to be Updated", routeController.modifyRoute(route));
+		logger.info("[end] testModifyRouteValidRouteId()");
+	}
+	
+	@Test(expected = InvalidRouteDataException.class)
+	public void testDurationInvalidValue() throws InvalidVehicleDataException, InvalidRouteDataException {
+		logger.info("[start] testDurationInvalidValue()");
+		Route route = new Route(33, "Bhopal", "Indore", -300, 03.50, 9);
+		routeController.modifyRoute(route);
+		logger.info("[end] testDurationInvalidValue()");
+	}
+	
+	@Test
+	public void testDurationValidValue() throws InvalidVehicleDataException, InvalidRouteDataException {
+		logger.info("[start] testDurationValidValue()");
+		Route route = new Route(33, "Bhopal", "Indore", 300, 03.50, 9);
+		assertNotNull("Route Found to be Updated", routeController.modifyRoute(route));
+		logger.info("[end] testSeatingCapacityValidValue()");
+	}
 }
