@@ -49,27 +49,27 @@ public class BookingControllerTest {
 		logger.error("boarding point and drop point cannot be same");
 		logger.info("[end] testAddBookingBoardingDropPointSuccess()");
 	}
-//
-//	@Test
-//	public void BookingSearchSuccess() throws BookingNotFoundException {
-//		logger.info("[START] BookingSearchSuccess()");
-//		assertNotNull("Booking Found", bookingController.viewById(123));//Checks that object isn't null,PASS
-//		logger.info("[END] BookingSearchSuccess()"); 
-//	}
-//	
-//	@Test(expected = BookingNotFoundException.class)
-//	public void BookingSearchFailed() throws BookingNotFoundException {
-//		logger.info("[START] BookingSearchFailed()");
-//		bookingController.viewById(-9345);
-//		logger.info("[END] BookingSearchFailed()");  //Fail negative ID not allowed
-//	}
-//	
-//	@Test (expected = BookingNotFoundException.class)
-//	public void BookingSearchEmpty() throws BookingNotFoundException {
-//		logger.info("[START] BookingSearchEmpty()");
-//		assertNull("Booking Not Found", bookingController.viewById(123));//Checks that object is null,Fail
-//		logger.info("[END] BookingSearchEmpty()");
-//	}
+
+	@Test
+	public void BookingSearchSuccess() throws BookingNotFoundException {
+		logger.info("[START] BookingSearchSuccess()");
+		assertNotNull("Booking Found", bookingController.viewById(123));//Checks that object isn't null,PASS
+		logger.info("[END] BookingSearchSuccess()"); 
+	}
+	
+	@Test(expected = BookingNotFoundException.class)
+	public void BookingSearchFailed() throws BookingNotFoundException {
+		logger.info("[START] BookingSearchFailed()");
+		bookingController.viewById(-9345);
+		logger.info("[END] BookingSearchFailed()");  //Fail negative ID not allowed
+	}
+	
+	@Test (expected = BookingNotFoundException.class)
+	public void BookingSearchEmpty() throws BookingNotFoundException {
+		logger.info("[START] BookingSearchEmpty()");
+		assertNull("Booking Not Found", bookingController.viewById(123));//Checks that object is null,Fail
+		logger.info("[END] BookingSearchEmpty()");
+	}
 
 	@Test(expected = BookingNotFoundException.class)
 	public void testCancelBookingIdFailed() throws BookingNotFoundException {

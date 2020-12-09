@@ -12,33 +12,33 @@ public class BookingController {
 	private static Logger logger = LogManager.getLogger(BookingController.class.getName());
 	BookingServiceImplementation bookingService = new BookingServiceImplementation();
 	
-//	
-//	public Booking viewById(int bookingId) throws BookingNotFoundException {
-//		logger.info("Finding books for id: " + bookingId);
-//		Booking booking = null;
-//		try {
-//			booking = bookingService.viewById(bookingId); 
-//		}
-//		catch(Exception e) {
-//			logger.error("BookingNotFoundException: " + e);
-//			throw new BookingNotFoundException(e.getMessage());
-//		}
-//		return booking;
-//	}
-//	
-//	
-//	public Booking viewAll(int bookingId) throws BookingNotFoundException {
-//		logger.info("Finding books for id: " + bookingId);
-//		Booking booking= null;
-//		try {
-//			booking = bookingService.viewAll(bookingId); 
-//		}
-//		catch(Exception e) {
-//			logger.error("BookingNotFoundException: " + e);
-//			throw new BookingNotFoundException(e.getMessage());
-//		}
-//		return booking;
-//	}
+	
+	public Booking viewById(int bookingId) throws BookingNotFoundException {
+		logger.info("Finding books for id: " + bookingId);
+		Booking booking = null;
+		try {
+			booking = bookingService.viewById(bookingId); 
+		}
+		catch(Exception e) {
+			logger.error("BookingNotFoundException: " + e);
+			throw new BookingNotFoundException(e.getMessage());
+		}
+		return booking;
+	}
+	
+	
+	public Booking viewAll(int bookingId) throws BookingNotFoundException {
+		logger.info("Finding books for id: " + bookingId);
+		Booking booking= null;
+		try {
+			booking = bookingService.viewAll(bookingId); 
+		}
+		catch(Exception e) {
+			logger.error("BookingNotFoundException: " + e);
+			throw new BookingNotFoundException(e.getMessage());
+		}
+		return booking;
+	}
 	
 	public Booking cancelBookingById(int bookingId) throws BookingNotFoundException {
 		logger.info("Finding books for id: " + bookingId);

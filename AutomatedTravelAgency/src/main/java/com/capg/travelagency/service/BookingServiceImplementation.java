@@ -15,20 +15,20 @@ public class BookingServiceImplementation implements BookingService {
 	
 	private static Logger logger = LogManager.getLogger(BookingServiceImplementation.class.getName());
 	BookingDAO bookingDao = new BookingDAOImplementation();
-//	
-//	public Booking viewById(int bookingId) throws BookingNotFoundException {
-//		BookingEntity bookingEntity = bookingDao.viewById(bookingId);
-//		logger.info("BookingEntity: " + bookingEntity);
-//		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
-//		
-//	}
-//	
-//	public Booking viewAll(int bookingId) throws BookingNotFoundException {
-//		BookingEntity bookingEntity = bookingDao.viewAll(bookingId);
-//		logger.info("BookingEntity: " + bookingEntity);
-//		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
-//		
-//	}
+	
+	public Booking viewById(int bookingId) throws BookingNotFoundException {
+		BookingEntity bookingEntity = bookingDao.viewById(bookingId);
+		logger.info("BookingEntity: " + bookingEntity);
+		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
+		
+	}
+	
+	public Booking viewAll(int bookingId) throws BookingNotFoundException {
+		BookingEntity bookingEntity = bookingDao.viewAll(bookingId);
+		logger.info("BookingEntity: " + bookingEntity);
+		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
+		
+	}
 
 	public Booking cancelBookingById(int bookingId) throws BookingNotFoundException {
 		BookingEntity bookingEntity = bookingDao.cancelBookingById(bookingId);
