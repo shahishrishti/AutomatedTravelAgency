@@ -3,21 +3,6 @@ package com.capg.travelagency.dto;
 import java.util.Date;
 
 public class Booking {
-	
-	public Booking(Date bookingDate, String username, double fare, String bookingStatus, int vehicleNo, long mobileNo,
-			int numOfPassenger, Date journeyDate, String dropPoint, String boardingPoint) {
-		super();
-		this.bookingDate = bookingDate;
-		this.username = username;
-		this.fare = fare;
-		this.bookingStatus = bookingStatus;
-		this.vehicleNo = vehicleNo;
-		this.mobileNo = mobileNo;
-		this.numOfPassenger = numOfPassenger;
-		this.journeyDate = journeyDate;
-		this.dropPoint = dropPoint;
-		this.boardingPoint = boardingPoint;
-	}
 
 	//data members
 	private int bookingId;
@@ -54,9 +39,20 @@ public class Booking {
 		this.boardingPoint = boardingPoint;
 	}
 
-	public Booking(int bookingId, Date bookingDate, long mobileNo, Date journeyDate, String boardingPoint,
-			String dropPoint, double fare) {
-		// TODO Auto-generated constructor stub
+
+	public Booking(Date bookingDate, String username, double fare, String bookingStatus, int vehicleNo, long mobileNo,
+			int numOfPassenger, Date journeyDate, String dropPoint, String boardingPoint) {
+		super();
+		this.bookingDate = bookingDate;
+		this.username = username;
+		this.fare = fare;
+		this.bookingStatus = bookingStatus;
+		this.vehicleNo = vehicleNo;
+		this.mobileNo = mobileNo;
+		this.numOfPassenger = numOfPassenger;
+		this.journeyDate = journeyDate;
+		this.dropPoint = dropPoint;
+		this.boardingPoint = boardingPoint;
 	}
 
 	//getter and setters

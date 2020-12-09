@@ -12,33 +12,33 @@ public class BookingController {
 	private static Logger logger = LogManager.getLogger(BookingController.class.getName());
 	BookingServiceImplementation bookingService = new BookingServiceImplementation();
 	
-	
-	public Booking viewById(int bookingId) throws BookingNotFoundException {
-		logger.info("Finding books for id: " + bookingId);
-		Booking booking = null;
-		try {
-			booking = bookingService.viewById(bookingId); 
-		}
-		catch(Exception e) {
-			logger.error("BookingNotFoundException: " + e);
-			throw new BookingNotFoundException(e.getMessage());
-		}
-		return booking;
-	}
-	
-	
-	public Booking viewAll(int bookingId) throws BookingNotFoundException {
-		logger.info("Finding books for id: " + bookingId);
-		Booking booking= null;
-		try {
-			booking = bookingService.viewAll(bookingId); 
-		}
-		catch(Exception e) {
-			logger.error("BookingNotFoundException: " + e);
-			throw new BookingNotFoundException(e.getMessage());
-		}
-		return booking;
-	}
+//	
+//	public Booking viewById(int bookingId) throws BookingNotFoundException {
+//		logger.info("Finding books for id: " + bookingId);
+//		Booking booking = null;
+//		try {
+//			booking = bookingService.viewById(bookingId); 
+//		}
+//		catch(Exception e) {
+//			logger.error("BookingNotFoundException: " + e);
+//			throw new BookingNotFoundException(e.getMessage());
+//		}
+//		return booking;
+//	}
+//	
+//	
+//	public Booking viewAll(int bookingId) throws BookingNotFoundException {
+//		logger.info("Finding books for id: " + bookingId);
+//		Booking booking= null;
+//		try {
+//			booking = bookingService.viewAll(bookingId); 
+//		}
+//		catch(Exception e) {
+//			logger.error("BookingNotFoundException: " + e);
+//			throw new BookingNotFoundException(e.getMessage());
+//		}
+//		return booking;
+//	}
 	
 	public Booking cancelBookingById(int bookingId) throws BookingNotFoundException {
 		logger.info("Finding books for id: " + bookingId);
@@ -53,30 +53,26 @@ public class BookingController {
 		return booking;
 	}
 	
-	public Booking addBooking(Booking addedBooking) throws BookingNotFoundException {
-		
-		
+	public Booking addBooking(Booking addedBooking) throws BookingNotFoundException, InvalidVehicleDataException {
 		logger.info("Finding books for id: " + addedBooking);
 		Booking booking= null;
-		
-			if(addedBooking.getNumOfPassenger()<=0 ) {
-				throw new BookingNotFoundException("less tha 0");
-			}else if(addedBooking.getBoardingPoint().equals(addedBooking.getDropPoint())) {
-				throw new BookingNotFoundException("boarding Point and drop point cannot be same");
-			}else {
-				try {
-					booking=bookingService.addBooking(addedBooking);
-				}catch(BookingNotFoundException bookingNotFoundException){
-					logger.error("BookingNotFoundException: "+bookingNotFoundException);
-					throw new BookingNotFoundException(bookingNotFoundException.getMessage());
-					}
-		
+		if(addedBooking.getNumOfPassenger() <= 0 ) {
+			throw new BookingNotFoundException("No. of passengers is less tha 0");
+		}else if(addedBooking.getBoardingPoint().equals(addedBooking.getDropPoint())) {
+			throw new BookingNotFoundException("boarding Point and drop point cannot be same");
+		}else {
+			try {
+				booking=bookingService.addBooking(addedBooking);
+			}catch(BookingNotFoundException bookingNotFoundException){
+				logger.error("BookingNotFoundException: "+bookingNotFoundException);
+				throw new BookingNotFoundException(bookingNotFoundException.getMessage());
+			}
 		}
 		return booking;
 	}
 	
 	public Booking viewBookingStatusById(int bookingId) throws BookingNotFoundException {
-		logger.info("Finding books for id: " + bookingId);
+		logger.info("Finding booking for id: " + bookingId);
 		Booking booking = null;
 		try {
 			booking = bookingService.viewBookingStatusById(bookingId); 

@@ -6,13 +6,13 @@ import com.capg.travelagency.exceptions.BookingNotFoundException;
 import com.capg.travelagency.exceptions.InvalidVehicleDataException;
 public interface BookingDAO {
 	
-		BookingEntity viewById(int bookingId) throws BookingNotFoundException;
-		
-		BookingEntity viewAll(int bookingId) throws BookingNotFoundException;
+//		BookingEntity viewById(int bookingId) throws BookingNotFoundException;
+//		
+//		BookingEntity viewAll(int bookingId) throws BookingNotFoundException;
 		
 		BookingEntity cancelBookingById(int bookingId) throws BookingNotFoundException;
 		
-		BookingEntity addBooking(Booking addedBooking) throws BookingNotFoundException;
+		BookingEntity addBooking(Booking addedBooking) throws BookingNotFoundException, InvalidVehicleDataException;
 		
 		BookingEntity viewBookingStatusById(int bookingId) throws BookingNotFoundException;
 		

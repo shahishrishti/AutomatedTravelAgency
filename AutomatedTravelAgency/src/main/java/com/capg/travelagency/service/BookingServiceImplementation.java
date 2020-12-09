@@ -15,35 +15,35 @@ public class BookingServiceImplementation implements BookingService {
 	
 	private static Logger logger = LogManager.getLogger(BookingServiceImplementation.class.getName());
 	BookingDAO bookingDao = new BookingDAOImplementation();
-	
-	public Booking viewById(int bookingId) throws BookingNotFoundException {
-		BookingEntity bookingEntity = bookingDao.viewById(bookingId);
-		logger.info("BookingEntity: " + bookingEntity);
-		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
-		
-	}
-	
-	public Booking viewAll(int bookingId) throws BookingNotFoundException {
-		BookingEntity bookingEntity = bookingDao.viewAll(bookingId);
-		logger.info("BookingEntity: " + bookingEntity);
-		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
-		
-	}
+//	
+//	public Booking viewById(int bookingId) throws BookingNotFoundException {
+//		BookingEntity bookingEntity = bookingDao.viewById(bookingId);
+//		logger.info("BookingEntity: " + bookingEntity);
+//		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
+//		
+//	}
+//	
+//	public Booking viewAll(int bookingId) throws BookingNotFoundException {
+//		BookingEntity bookingEntity = bookingDao.viewAll(bookingId);
+//		logger.info("BookingEntity: " + bookingEntity);
+//		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
+//		
+//	}
 
 	public Booking cancelBookingById(int bookingId) throws BookingNotFoundException {
-		BookingEntity bookingEntity = bookingDao.viewById(bookingId);
+		BookingEntity bookingEntity = bookingDao.cancelBookingById(bookingId);
 		logger.info("BookingEntity: " + bookingEntity);
 		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
 	}
 
-	public Booking addBooking(Booking addedBooking) throws BookingNotFoundException {
+	public Booking addBooking(Booking addedBooking) throws BookingNotFoundException, InvalidVehicleDataException {
 		BookingEntity bookingEntity = bookingDao.addBooking(addedBooking);
 		logger.info("BookingEntity: " + bookingEntity);
 		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
 	}
 
 	public Booking viewBookingStatusById(int bookingId) throws BookingNotFoundException {
-		BookingEntity bookingEntity = bookingDao.viewById(bookingId);
+		BookingEntity bookingEntity = bookingDao.viewBookingStatusById(bookingId);
 		logger.info("BookingEntity: " + bookingEntity);
 		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
 	}
