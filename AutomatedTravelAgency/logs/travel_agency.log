@@ -1,166 +1,598 @@
-INFO  | 2020-12-08 15:04:29 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:38) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 15:04:29 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 15:04:29 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:27) - Database returned vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=fdnfmdm, contactNo=1234567890, licenseNo=fndjf]]
-INFO  | 2020-12-08 15:04:29 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Delete vehicle data from database
-ERROR | 2020-12-08 15:04:30 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - ERROR: relation "vehicle_route" does not exist
-  Position: 343
-INFO  | 2020-12-08 15:04:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 15:04:30 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 15:17:13 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:38) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 15:17:13 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 15:17:13 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:27) - Database returned vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=fdnfmdm, contactNo=1234567890, licenseNo=fndjf]]
-INFO  | 2020-12-08 15:17:13 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Delete vehicle data from database
-ERROR | 2020-12-08 15:17:13 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - ERROR: column routeentit1_.vehicle_no does not exist
-  Hint: Perhaps you meant to reference the column "routeentit0_.vehicle_no" or the column "routeentit1_.vehile_no".
-  Position: 296
-INFO  | 2020-12-08 15:17:13 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 15:17:13 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 15:18:51 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:38) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 15:18:51 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 15:18:51 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:27) - Database returned vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=fdnfmdm, contactNo=1234567890, licenseNo=fndjf]]
-INFO  | 2020-12-08 15:18:51 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Delete vehicle data from database
-INFO  | 2020-12-08 15:18:52 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:20) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=fdnfmdm, contactNo=1234567890, licenseNo=fndjf]]
-INFO  | 2020-12-08 15:18:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:40) - [end] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 15:18:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 15:18:52 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 15:18:52 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:27) - Database returned vehicleEntity: null
-ERROR | 2020-12-08 15:18:52 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:29) - Vehicle entity was found null
-ERROR | 2020-12-08 15:18:52 | [main] presentation.VehicleController (VehicleController.java:23) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
-ERROR | 2020-12-08 15:18:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:31) - Vehicle no. cannot be negative or zero.
-INFO  | 2020-12-08 15:18:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:33) - [end] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 15:29:32 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:38) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 15:29:32 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 15:29:32 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:27) - Database returned vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=sdsdh, contactNo=1234567890, licenseNo=abdh121]]
-INFO  | 2020-12-08 15:29:32 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Delete vehicle data from database
-INFO  | 2020-12-08 15:29:32 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:20) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=sdsdh, contactNo=1234567890, licenseNo=abdh121]]
-INFO  | 2020-12-08 15:29:32 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:40) - [end] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 15:29:33 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 15:29:33 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 15:29:33 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:27) - Database returned vehicleEntity: null
-ERROR | 2020-12-08 15:29:33 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:29) - Vehicle entity was found null
-ERROR | 2020-12-08 15:29:33 | [main] presentation.VehicleController (VehicleController.java:23) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
-ERROR | 2020-12-08 15:29:33 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:31) - Vehicle no. cannot be negative or zero.
-INFO  | 2020-12-08 15:29:33 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:33) - [end] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 15:33:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:38) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 15:33:08 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 15:33:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:27) - Database returned vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
-INFO  | 2020-12-08 15:33:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Delete vehicle data from database
-INFO  | 2020-12-08 15:33:08 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:20) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
-INFO  | 2020-12-08 15:33:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:40) - [end] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 15:33:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 15:33:08 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 15:33:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:27) - Database returned vehicleEntity: null
-ERROR | 2020-12-08 15:33:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:29) - Vehicle entity was found null
-ERROR | 2020-12-08 15:33:08 | [main] presentation.VehicleController (VehicleController.java:23) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
-ERROR | 2020-12-08 15:33:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:31) - Vehicle no. cannot be negative or zero.
-INFO  | 2020-12-08 15:33:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:33) - [end] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:06:54 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:33) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:06:54 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 16:06:54 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:28) - Database returned vehicleEntity: null
-ERROR | 2020-12-08 16:06:54 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:30) - Vehicle entity was found null
-ERROR | 2020-12-08 16:06:54 | [main] presentation.VehicleController (VehicleController.java:23) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: 1 was not found.
-INFO  | 2020-12-08 16:06:54 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:06:54 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 16:07:32 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:33) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:07:32 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 16:07:32 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:28) - Database returned vehicleEntity: null
-ERROR | 2020-12-08 16:07:32 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:30) - Vehicle entity was found null
-ERROR | 2020-12-08 16:07:32 | [main] presentation.VehicleController (VehicleController.java:23) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: 1 was not found.
-INFO  | 2020-12-08 16:07:32 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:07:32 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 16:08:45 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:33) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:08:45 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 16:08:45 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:28) - Database returned vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
-INFO  | 2020-12-08 16:08:45 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:34) - Delete vehicle data from database
-INFO  | 2020-12-08 16:08:45 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:20) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
-INFO  | 2020-12-08 16:08:45 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:35) - [end] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:08:45 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:08:45 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 16:08:45 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:28) - Database returned vehicleEntity: null
-ERROR | 2020-12-08 16:08:45 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:30) - Vehicle entity was found null
-ERROR | 2020-12-08 16:08:45 | [main] presentation.VehicleController (VehicleController.java:23) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
-INFO  | 2020-12-08 16:08:45 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:28) - [end] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:14:40 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:33) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:14:40 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 16:14:40 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:28) - Database returned vehicleEntity: null
-ERROR | 2020-12-08 16:14:40 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:30) - Vehicle entity was found null
-ERROR | 2020-12-08 16:14:40 | [main] presentation.VehicleController (VehicleController.java:23) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: 1 was not found.
-INFO  | 2020-12-08 16:14:40 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:14:40 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 16:15:13 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:33) - [start] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:15:13 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: 1
-INFO  | 2020-12-08 16:15:13 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:28) - Database returned vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
-INFO  | 2020-12-08 16:15:13 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:34) - Delete vehicle data from database
-INFO  | 2020-12-08 16:15:13 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:20) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=21.0, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
-INFO  | 2020-12-08 16:15:13 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:35) - [end] testDeleteVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:15:13 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:26) - [start] testDeleteVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:15:13 | [main] presentation.VehicleController (VehicleController.java:17) - vehicleNo: -1
-INFO  | 2020-12-08 16:15:13 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:28) - Database returned vehicleEntity: null
-ERROR | 2020-12-08 16:15:13 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:30) - Vehicle entity was found null
-ERROR | 2020-12-08 16:15:13 | [main] presentation.VehicleController (VehicleController.java:23) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
-INFO  | 2020-12-08 16:44:57 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:44:57 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:44:57 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:54) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
-INFO  | 2020-12-08 16:44:57 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:27) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
-INFO  | 2020-12-08 16:44:57 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:45:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:40) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:45:52 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: -1
-INFO  | 2020-12-08 16:45:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:45:52 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:45:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:48) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:45:52 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:45:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:55) - [start] testModifyVehicleInvalidVehicleName()
-INFO  | 2020-12-08 16:45:52 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: -1
-INFO  | 2020-12-08 16:46:33 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:40) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:46:33 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: -1
-INFO  | 2020-12-08 16:46:33 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:46:33 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:46:33 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:48) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:46:33 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:46:33 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:55) - [start] testModifyVehicleInvalidVehicleName()
-INFO  | 2020-12-08 16:46:33 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:47:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:40) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:47:08 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: -1
-INFO  | 2020-12-08 16:47:09 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:47:09 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:47:09 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:48) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:47:09 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:47:09 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:55) - [start] testModifyVehicleInvalidVehicleName()
-INFO  | 2020-12-08 16:47:09 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:48:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:40) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:48:52 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: -1
-INFO  | 2020-12-08 16:48:52 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:48) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:48:52 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:50:09 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:40) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:50:09 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: -1
-INFO  | 2020-12-08 16:50:09 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:48) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:50:09 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 16:56:02 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:40) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 16:56:02 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: -1
-INFO  | 2020-12-08 16:56:03 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:48) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 16:56:03 | [main] presentation.VehicleController (VehicleController.java:30) - vehicleNo: 1
-INFO  | 2020-12-08 17:32:17 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 17:32:17 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
-ERROR | 2020-12-08 17:32:17 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
-INFO  | 2020-12-08 17:32:17 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 17:32:17 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
-INFO  | 2020-12-08 17:32:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 17:32:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
-ERROR | 2020-12-08 17:32:56 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
-INFO  | 2020-12-08 17:32:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 17:32:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
-INFO  | 2020-12-08 17:34:29 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 17:34:29 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
-ERROR | 2020-12-08 17:34:29 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
-INFO  | 2020-12-08 17:34:29 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 17:34:29 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
-INFO  | 2020-12-08 17:35:02 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 17:35:02 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
-ERROR | 2020-12-08 17:35:02 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
-INFO  | 2020-12-08 17:35:02 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 17:35:02 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
-INFO  | 2020-12-08 17:36:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
-INFO  | 2020-12-08 17:36:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
-ERROR | 2020-12-08 17:36:08 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
-INFO  | 2020-12-08 17:36:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
-INFO  | 2020-12-08 17:36:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 08:54:10 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 08:54:10 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 08:54:10 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 08:54:10 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:114) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 08:54:10 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 08:54:10 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:67) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 08:54:10 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 08:54:10 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:116) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 08:55:50 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 08:55:50 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 08:55:50 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 08:57:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 08:57:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 08:57:44 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 08:58:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 08:58:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 08:58:07 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 08:58:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 08:58:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 08:58:07 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 09:00:18 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 09:00:18 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 09:00:18 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 09:00:18 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 09:00:18 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 09:00:18 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 09:03:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 09:03:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 09:03:08 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 09:03:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 09:03:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 09:03:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:67) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=tata kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 09:03:08 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=tata kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 09:03:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:95) - [end] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 09:03:29 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 09:03:29 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 09:03:29 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 09:03:29 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 09:03:29 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 09:03:29 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 10:13:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 10:13:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:13:53 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 10:16:42 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:100) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 10:16:42 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:16:42 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 10:16:42 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 10:16:42 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:16:42 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data 
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:50:39 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:50:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:50:39 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:50:39 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:50:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:50:39 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:50:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:79) - [end] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 10:56:35 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:37) - Delete vehicle data from database
+INFO  | 2020-12-09 10:56:35 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:21) - vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:36) - [end] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:56:35 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:56:35 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:56:35 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:51) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:56:35 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 10:56:35 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 10:56:35 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 10:56:35 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 10:57:58 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:37) - Delete vehicle data from database
+INFO  | 2020-12-09 10:57:58 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:21) - vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:36) - [end] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:57:58 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:57:58 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:57:58 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:51) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 10:57:58 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 10:57:58 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 10:57:58 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 10:57:58 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:01:16 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:01:16 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:01:16 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:01:16 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:01:16 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:79) - [end] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:11:24 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:11:24 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+ERROR | 2020-12-09 11:11:24 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 11:11:24 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:11:24 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:11:25 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:37) - Delete vehicle data from database
+INFO  | 2020-12-09 11:11:25 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:21) - vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:36) - [end] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:11:25 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:11:25 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:11:25 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:51) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:11:25 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:11:25 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:11:25 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+ERROR | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:11:25 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+ERROR | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:13:49 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:13:49 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: 2 was not found.
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:13:49 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+ERROR | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:14:44 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:14:44 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: 2 was not found.
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+ERROR | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:14:44 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+ERROR | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:15:21 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:15:21 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: 2 was not found.
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+ERROR | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:15:21 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+ERROR | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:16:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:37) - Delete vehicle data from database
+INFO  | 2020-12-09 11:16:08 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:21) - vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:36) - [end] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:16:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:16:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:16:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:51) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:16:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:70) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:16:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:16:08 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+ERROR | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:16:08 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:17:29 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:17:29 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:17:29 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:17:29 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:17:29 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:17:29 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:29 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:17:29 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:29 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:37) - Delete vehicle data from database
+INFO  | 2020-12-09 11:17:30 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:21) - vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:36) - [end] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:17:30 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:71) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:30 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:17:30 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:71) - Updated vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:30 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:17:30 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:71) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:30 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:51) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:17:30 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:71) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:30 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:17:30 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:17:30 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+ERROR | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:17:30 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:17:56 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:37) - Delete vehicle data from database
+INFO  | 2020-12-09 11:17:56 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:21) - vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:36) - [end] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:17:56 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:72) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:17:56 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:72) - Updated vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:17:56 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:72) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:51) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:17:56 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:72) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:17:56 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:17:56 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:17:56 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:72) - Updated vehicleEntity: VehicleEntity [vehicleNo=3, vehicleName=Hyundai Creta, vehicleType=Car, farePerKm=20.5, seatingCapacity=3, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=3, vehicleName=Hyundai Creta, vehicleType=Car, farePerKm=20.5, seatingCapacity=3, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:17:56 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:79) - [end] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+ERROR | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:19:07 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:37) - Delete vehicle data from database
+INFO  | 2020-12-09 11:19:07 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:21) - vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:36) - [end] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:19:07 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:73) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:19:07 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:73) - Updated vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:19:07 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:73) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:51) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:19:07 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:73) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:19:07 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:19:07 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:19:07 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+ERROR | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:19:53 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:38) - Delete vehicle data from database
+INFO  | 2020-12-09 11:19:53 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:21) - vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:36) - [end] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:19:53 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:19:53 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:19:53 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:51) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:19:53 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:19:53 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:19:53 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+ERROR | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:19:53 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=3, vehicleName=Hyundai Creta, vehicleType=Car, farePerKm=20.5, seatingCapacity=3, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=3, vehicleName=Hyundai Creta, vehicleType=Car, farePerKm=20.5, seatingCapacity=3, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:19:53 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:79) - [end] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:70) - [start] testSeatingCapacityInvalidValue()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+ERROR | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data SeatingCapacity of car should be in the range 1 to 4.
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:41) - [start] testModifyVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: -1
+ERROR | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Invalid Vehicle No.: -1
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:34) - [start] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: 2
+INFO  | 2020-12-09 11:21:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:38) - Delete vehicle data from database
+INFO  | 2020-12-09 11:21:39 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:21) - vehicleEntity: VehicleEntity [vehicleNo=2, vehicleName=Tata StarBus, vehicleType=Bus, farePerKm=50.0, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:36) - [end] testDeleteVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:63) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:21:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=20.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:65) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:91) - [start] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+INFO  | 2020-12-09 11:21:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=4, vehicleName=Tata Altroz, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:93) - [end] testModifyVehicleValidVehicleType()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:98) - [start] testModifyVehicleInvalidVehicleFare()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:49) - [start] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:21:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Bus, farePerKm=20.5, seatingCapacity=20, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:51) - [end] testModifyVehicleValidVehicleNo()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:105) - [start] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+INFO  | 2020-12-09 11:21:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=1, vehicleName=Tata Kia, vehicleType=Car, farePerKm=30.5, seatingCapacity=4, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:107) - [end] testModifyVehicleValidVehicleFare()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:27) - [start] testDeleteVehicleInvalidVehicleNo()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:18) - vehicleNo: -1
+INFO  | 2020-12-09 11:21:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:31) - Database returned vehicleEntity: null
+ERROR | 2020-12-09 11:21:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:33) - Vehicle entity was found null
+ERROR | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:24) - InvalidVehicleDataException: Invalid vehicle data VehicleNo: -1 was not found.
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:56) - [start] testModifyVehicleInvalidVehicleName()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 1
+ERROR | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:84) - [start] testModifyVehicleInvalidVehicleType()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 4
+ERROR | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:36) - InvalidVehicleDataException: Invalid vehicle data Either the field is null or less than 0
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:77) - [start] testSeatingCapacityValidValue()
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleController (VehicleController.java:31) - vehicleNo: 3
+INFO  | 2020-12-09 11:21:39 | [main] dao.VehicleDAOImpl (VehicleDAOImpl.java:74) - Updated vehicleEntity: VehicleEntity [vehicleNo=3, vehicleName=Hyundai Creta, vehicleType=Car, farePerKm=20.5, seatingCapacity=3, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] service.VehicleServiceImplementation (VehicleServiceImplementation.java:28) - vehicleEntity: VehicleEntity [vehicleNo=3, vehicleName=Hyundai Creta, vehicleType=Car, farePerKm=20.5, seatingCapacity=3, driverEntity=Driver [driverId=1, name=abc, address=ahdjh, contactNo=1234567890, licenseNo=dhshd12]]
+INFO  | 2020-12-09 11:21:39 | [main] presentation.VehicleControllerTest (VehicleControllerTest.java:79) - [end] testSeatingCapacityValidValue()

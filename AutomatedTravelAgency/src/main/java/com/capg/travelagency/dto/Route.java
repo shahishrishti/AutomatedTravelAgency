@@ -3,7 +3,6 @@ package com.capg.travelagency.dto;
 public class Route {
 	
 	private int routeId;
-	private int vehicleNo;
 	private String source;
 	private String destination;
 	private  double distance;
@@ -15,19 +14,17 @@ public class Route {
 	}
 
 	//parameterized constructor
-	public Route(int routeId, int vehicleNo, String source, String destination, double distance, double duration) {
+	public Route(int routeId, String source, String destination, double distance, double duration) {
 		super();
 		this.routeId = routeId;
-		this.vehicleNo = vehicleNo;
 		this.source = source;
 		this.destination = destination;
 		this.distance = distance;
 		this.duration = duration;
 	}
 
-	public Route(int vehicleNo, String source, String destination, double distance, double duration) {
+	public Route(String source, String destination, double distance, double duration) {
 		super();
-		this.vehicleNo = vehicleNo;
 		this.source = source;
 		this.destination = destination;
 		this.distance = distance;
@@ -41,14 +38,6 @@ public class Route {
 
 	public void setRouteId(int routeId) {
 		this.routeId = routeId;
-	}
-
-	public int getVehicleNo() {
-		return this.vehicleNo;
-	}
-
-	public void setVehicleNo(int vehicleNo) {
-		this.vehicleNo = vehicleNo;
 	}
 
 	public String getSource() {
@@ -85,7 +74,7 @@ public class Route {
 
 	@Override
 	public String toString() {
-		return "Route [routeId=" + routeId + ", vehicleNo=" + vehicleNo + ", source=" + source + ", destination="
+		return "Route [routeId=" + routeId + ", source=" + source + ", destination="
 				+ destination + ", distance=" + distance + ", duration=" + duration + "]";
 	}	
 }

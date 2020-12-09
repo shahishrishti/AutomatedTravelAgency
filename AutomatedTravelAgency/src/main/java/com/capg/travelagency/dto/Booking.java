@@ -10,7 +10,7 @@ public class Booking {
 	private String username;
 	private double fare;
 	private String bookingStatus;
-	private int vehicleId;
+	private int vehicleNo;
 	private long mobileNo;
 	private int numOfPassenger;
 	private Date journeyDate;
@@ -23,7 +23,7 @@ public class Booking {
 	}
 	
 	//parameterized constructor
-	public Booking(int bookingId, Date bookingDate, String username, double fare, String bookingStatus, int vehicleId,
+	public Booking(int bookingId, Date bookingDate, String username, double fare, String bookingStatus, int vehicleNo,
 			long mobileNo, int numOfPassenger, Date journeyDate, String dropPoint, String boardingPoint) {
 		super();
 		this.bookingId = bookingId;
@@ -31,12 +31,17 @@ public class Booking {
 		this.username = username;
 		this.fare = fare;
 		this.bookingStatus = bookingStatus;
-		this.vehicleId = vehicleId;
+		this.vehicleNo = vehicleNo;
 		this.mobileNo = mobileNo;
 		this.numOfPassenger = numOfPassenger;
 		this.journeyDate = journeyDate;
 		this.dropPoint = dropPoint;
 		this.boardingPoint = boardingPoint;
+	}
+
+	public Booking(int bookingId, Date bookingDate, long mobileNo, Date journeyDate, String boardingPoint,
+			String dropPoint, double fare) {
+		// TODO Auto-generated constructor stub
 	}
 
 	//getter and setters
@@ -80,12 +85,12 @@ public class Booking {
 		this.bookingStatus = bookingStatus;
 	}
 
-	public int getVehicleId() {
-		return vehicleId;
+	public int getVehicleNo() {
+		return vehicleNo;
 	}
 
-	public void setVehicleId(int vehicleId) {
-		this.vehicleId = vehicleId;
+	public void setVehicleNo(int vehicleNo) {
+		this.vehicleNo = vehicleNo;
 	}
 
 	public long getMobileNo() {
@@ -132,7 +137,7 @@ public class Booking {
 	@Override
 	public String toString() {
 		return "Booking [bookingId=" + bookingId + ", bookingDate=" + bookingDate + ", username=" + username + ", fare="
-				+ fare + ", bookingStatus=" + bookingStatus + ", vehicleId=" + vehicleId + ", mobileNo=" + mobileNo
+				+ fare + ", bookingStatus=" + bookingStatus + ", vehicleNo=" + vehicleNo + ", mobileNo=" + mobileNo
 				+ ", numOfPassenger=" + numOfPassenger + ", journeyDate=" + journeyDate + ", dropPoint=" + dropPoint
 				+ ", boardingPoint=" + boardingPoint + "]";
 	}

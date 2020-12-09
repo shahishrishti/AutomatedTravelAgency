@@ -9,17 +9,43 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "booking")
+@NamedQueries({
+	@NamedQuery(name = "READ_ALL_BOOKINGS", 
+	query =
+	"SELECT b.vehicle_id, b.booking_id,b.booking_date,b.journey_date,b.boarding_point,b.drop_point,b.mobile_no from Booking b"),
+})
 public class BookingEntity {
+	
+	
 	
 	@Id
 	@GeneratedValue
 	@Column(name = "booking_id")
 	private int bookingId;
+	
+	public BookingEntity(String username, double fare, String bookingStatus, long mobileNo, int numOfPassenger,
+			Date journeyDate, String dropPoint, String boardingPoint, VehicleEntity vehicleEntity) {
+		super();
+		this.username = username;
+		this.fare = fare;
+		this.bookingStatus = bookingStatus;
+		this.mobileNo = mobileNo;
+		this.numOfPassenger = numOfPassenger;
+		this.journeyDate = journeyDate;
+		this.dropPoint = dropPoint;
+		this.boardingPoint = boardingPoint;
+		this.vehicleEntity = vehicleEntity;
+	}
+
+
+	
 	
 	@Column(name = "booking_date")
 	private Date bookingDate;
@@ -48,6 +74,10 @@ public class BookingEntity {
 	@Column(name = "boarding_point")
 	private String boardingPoint;
 	
+
+	
+	
+	
 	@OneToOne(cascade = {CascadeType.ALL},
 			fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "vehicle_no")
@@ -60,6 +90,23 @@ public class BookingEntity {
 	public BookingEntity(Date bookingDate, String username, double fare, String bookingStatus, long mobileNo,
 			int numOfPassenger, Date journeyDate, String dropPoint, String boardingPoint, VehicleEntity vehicleEntity) {
 		super();
+		this.bookingDate = bookingDate;
+		this.username = username;
+		this.fare = fare;
+		this.bookingStatus = bookingStatus;
+		this.mobileNo = mobileNo;
+		this.numOfPassenger = numOfPassenger;
+		this.journeyDate = journeyDate;
+		this.dropPoint = dropPoint;
+		this.boardingPoint = boardingPoint;
+		this.vehicleEntity = vehicleEntity;
+	}
+
+	public BookingEntity(int bookingId, Date bookingDate, String username, double fare, String bookingStatus,
+			long mobileNo, int numOfPassenger, Date journeyDate, String dropPoint, String boardingPoint,
+			VehicleEntity vehicleEntity) {
+		super();
+		this.bookingId = bookingId;
 		this.bookingDate = bookingDate;
 		this.username = username;
 		this.fare = fare;
@@ -151,7 +198,8 @@ public class BookingEntity {
 	public void setBoardingPoint(String boardingPoint) {
 		this.boardingPoint = boardingPoint;
 	}
-
+	
+	
 	public VehicleEntity getVehicleEntity() {
 		return vehicleEntity;
 	}
@@ -160,12 +208,14 @@ public class BookingEntity {
 		this.vehicleEntity = vehicleEntity;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "BookingEntity [bookingId=" + bookingId + ", bookingDate=" + bookingDate + ", username=" + username
 				+ ", fare=" + fare + ", bookingStatus=" + bookingStatus + ", mobileNo=" + mobileNo + ", numOfPassenger="
 				+ numOfPassenger + ", journeyDate=" + journeyDate + ", dropPoint=" + dropPoint + ", boardingPoint="
 				+ boardingPoint + ", vehicleEntity=" + vehicleEntity + "]";
-	}	
+	}
+
 	
 }
