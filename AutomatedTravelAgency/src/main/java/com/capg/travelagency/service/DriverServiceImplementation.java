@@ -14,8 +14,8 @@ public class DriverServiceImplementation implements DriverService{
 	private static Logger logger = LogManager.getLogger(DriverServiceImplementation.class.getName());
 	DriverDAO driverDao = new DriverDAOImpl();
 	
-	public Driver addDriver(int driverId,String name,String address,long contactNo,String licenseNo) throws InvalidDriverDataException {
-		DriverEntity driverEntity = driverDao.addDriver(driverId,name,address,contactNo,licenseNo);
+	public Driver addDriver(Driver addedDriver) throws InvalidDriverDataException {
+		DriverEntity driverEntity = driverDao.addDriver(addedDriver);
 		logger.info("DriverEntity: " + driverEntity);
 		return DriverUtils.convertDriverEntityIntoDriver(driverEntity);
 	}
@@ -29,6 +29,13 @@ public class DriverServiceImplementation implements DriverService{
 	public Driver deleteDriver(int driverId) throws InvalidDriverDataException {
 		DriverEntity driverEntity = driverDao.deleteDriver(driverId);
 		logger.info("deleteEntity: " + driverEntity);
-		return DriverUtils.convertDriverEntityIntoDriver(driverEntity);	
+		return DriverUtils.convertDriverEntityIntoDriver(driverEntity);		
+	}
+	
+	public Driver modifyDriver(Driver modifiedDriver) 
+	 throws  InvalidDriverDataException {
+		DriverEntity driverEntity = driverDao.modifyDriver(modifiedDriver);
+		logger.info("driverEntity: " + driverEntity);
+		return DriverUtils.convertDriverEntityIntoDriver(driverEntity);
 	}
 }

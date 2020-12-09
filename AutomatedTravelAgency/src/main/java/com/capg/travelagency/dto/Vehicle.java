@@ -15,6 +15,15 @@ public class Vehicle {
 		super();
 	}
 
+	public Vehicle(String vehicleName, String vehicleType, double farePerKm, int seatingCapacity, int driverId) {
+		super();
+		this.vehicleName = vehicleName;
+		this.vehicleType = vehicleType;
+		this.farePerKm = farePerKm;
+		this.seatingCapacity = seatingCapacity;
+		this.driverId = driverId;
+	}
+
 	//parameterized constructor
 	public Vehicle(int vehicleNo, String vehicleName, String vehicleType, double farePerKm, int seatingCapacity,
 			int driverId) {

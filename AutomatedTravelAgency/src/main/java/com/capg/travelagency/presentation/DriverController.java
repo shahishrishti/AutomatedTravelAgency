@@ -12,17 +12,21 @@ public class DriverController {
 	private static Logger logger = LogManager.getLogger(DriverController.class.getName());
 	DriverService driverService = new DriverServiceImplementation();
 	
-	public Driver addDriver(int driverId,String name,String address,long contactNo,String licenseNo) throws InvalidDriverDataException {
-		logger.info("Adding driver with id: " + driverId);
-		Driver driver = null;
+	public Driver addDriver(Driver addedDriver) throws InvalidDriverDataException {
+		logger.info("Adding driver :");
+		Driver responce = null;
+		if(addedDriver.getName()==null || addedDriver.getAddress()==null || addedDriver.getContactNo()==0|| addedDriver.getLicenseNo()==null)
+		{
+			throw new InvalidDriverDataException( "The field is null  ");
+		}
 		try {
-			driver = driverService.addDriver(driverId,name,address,contactNo,licenseNo);
+			responce = driverService.addDriver(addedDriver);
 		}
 		catch(InvalidDriverDataException invalidDriverDataException) {
 			logger.error("InvalidDriverDataException: " + invalidDriverDataException);
 			throw new InvalidDriverDataException(invalidDriverDataException.getMessage());
 		}
-		return driver;
+		return responce;
 	}
 
 	
@@ -49,6 +53,24 @@ public class DriverController {
 		catch(InvalidDriverDataException invalidDriverDataException) {
 			logger.error("InvalidDriverDataException: " + invalidDriverDataException);
 			throw new InvalidDriverDataException(invalidDriverDataException.getMessage());
+		}
+		return driver;
+	}
+	
+	
+	public Driver modifyDriver(Driver  modifiedDriver) throws InvalidDriverDataException  {
+		logger.info(""  +modifiedDriver);
+		Driver driver = null;
+		if(modifiedDriver.getName() == null || modifiedDriver.getAddress() == null || modifiedDriver.getContactNo() == 0  || modifiedDriver.getLicenseNo() == null)
+		{
+			throw new InvalidDriverDataException("Field is null");
+		}else{
+		try {
+			driver = driverService.modifyDriver(modifiedDriver);
+		} catch(InvalidDriverDataException invalidDriverDataException) {
+			logger.error("InvalidDriverDataException: " + invalidDriverDataException);
+			throw new InvalidDriverDataException(invalidDriverDataException.getMessage());
+		}
 		}
 		return driver;
 	}

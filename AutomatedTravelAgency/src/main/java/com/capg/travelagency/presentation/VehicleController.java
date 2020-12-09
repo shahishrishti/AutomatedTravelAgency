@@ -15,6 +15,48 @@ public class VehicleController {
 	private static Logger logger = LogManager.getLogger(VehicleController.class.getName());
 	VehicleService vehicleService = new VehicleServiceImplementation();
 	
+	public Vehicle  addVehicle(Vehicle addedVehicle) throws InvalidVehicleDataException, InvalidDriverDataException
+	{
+		logger.info("Adding vehicle"+addedVehicle);
+		Vehicle vehicle = null;
+		if(addedVehicle.getVehicleName() == null || addedVehicle.getVehicleType() == null || addedVehicle.getFarePerKm()<=0 ||
+				addedVehicle.getSeatingCapacity()<=0) {
+			throw new InvalidVehicleDataException("Either the field is null or less than or equal to zero.");
+		}
+		else if(addedVehicle.getVehicleType().equalsIgnoreCase("Car") && addedVehicle.getSeatingCapacity() >4)
+		{
+			throw new InvalidVehicleDataException("Seating capacity of car should be in the range of 1 to 4");
+		}
+		else if(addedVehicle.getVehicleType().equalsIgnoreCase("Bus") && addedVehicle.getSeatingCapacity()>=21)
+		{
+			throw new InvalidVehicleDataException("Seating capacity of bus should be in range of 1 to 20");
+		}
+		else {
+		try {
+			vehicle = vehicleService.addVehicle(addedVehicle);
+		}
+		catch(InvalidVehicleDataException invalidVehicleDataException) {
+			logger.error("InvalidVehicleDataException: " + invalidVehicleDataException);
+			throw new InvalidVehicleDataException(invalidVehicleDataException.getMessage());
+		}
+		}
+		return vehicle;
+	}
+	
+	public Vehicle  viewVehicleByNo(int vehicleNo) throws InvalidVehicleDataException
+	{
+		logger.info("Finding vehicle from no. : " + vehicleNo);
+		Vehicle vehicle = null;
+		try {
+			vehicle = vehicleService.viewVehicleByNo(vehicleNo);
+		}
+		catch(InvalidVehicleDataException invalidVehicleDataException) {
+			logger.error("InvalidVehicleDataException: " + invalidVehicleDataException);
+			throw new InvalidVehicleDataException(invalidVehicleDataException.getMessage());
+		}
+		return vehicle;
+	}
+
 	public Vehicle deleteVehicle(int vehicleNo) throws InvalidVehicleDataException {
 		logger.info("vehicleNo: " + vehicleNo);
 		Vehicle vehicle = null;
@@ -45,34 +87,6 @@ public class VehicleController {
 				logger.error("InvalidVehicleDataException: " + invalidVehicleDataException);
 				throw new InvalidVehicleDataException(invalidVehicleDataException.getMessage());
 			}
-		}
-		return vehicle;
-	}
-	
-	public Vehicle  addVehicle(String vehicleName, String vehicleType, double farePerKm, int seatingCapacity, int driverId) throws InvalidVehicleDataException, InvalidDriverDataException
-	{
-		logger.info("Adding vehicle");
-		Vehicle vehicle = null;
-		try {
-			vehicle = vehicleService.addVehicle(vehicleName, vehicleType, farePerKm, seatingCapacity, driverId);
-		}
-		catch(InvalidVehicleDataException invalidVehicleDataException) {
-			logger.error("InvalidVehicleDataException: " + invalidVehicleDataException);
-			throw new InvalidVehicleDataException(invalidVehicleDataException.getMessage());
-		}
-		return vehicle;
-	}
-	
-	public Vehicle  viewVehicleByNo(int vehicleNo) throws InvalidVehicleDataException
-	{
-		logger.info("Finding vehicle for no. : " + vehicleNo);
-		Vehicle vehicle = null;
-		try {
-			vehicle = vehicleService.viewVehicleByNo(vehicleNo);
-		}
-		catch(InvalidVehicleDataException invalidVehicleDataException) {
-			logger.error("InvalidVehicleDataException: " + invalidVehicleDataException);
-			throw new InvalidVehicleDataException(invalidVehicleDataException.getMessage());
 		}
 		return vehicle;
 	}

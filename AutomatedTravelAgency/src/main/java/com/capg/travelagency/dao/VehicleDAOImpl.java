@@ -26,6 +26,42 @@ public class VehicleDAOImpl implements VehicleDAO {
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
+	public VehicleEntity addVehicle(Vehicle addedVehicle) throws InvalidVehicleDataException, InvalidDriverDataException {
+		   entityManager.getTransaction().begin();
+		    DriverEntity newDriverEntity = entityManager.find(DriverEntity.class, addedVehicle.getDriverId());
+		     VehicleEntity vehicleEntity = null;
+		     if(newDriverEntity == null) {
+		    	 entityManager.getTransaction().commit();
+			     throw new InvalidDriverDataException("Invalid Driver ID: " + addedVehicle.getDriverId());
+		      } 
+		      else {
+			   vehicleEntity = new VehicleEntity(addedVehicle.getVehicleName(), addedVehicle.getVehicleType(), addedVehicle.getFarePerKm(), addedVehicle.getSeatingCapacity(), newDriverEntity );
+			entityManager.persist(vehicleEntity);
+		       }
+		    entityManager.getTransaction().commit();
+		
+		   return vehicleEntity;
+	}
+	
+	public VehicleEntity viewVehicleByNo(int vehicleNo) throws InvalidVehicleDataException {
+		entityManager.getTransaction().begin();
+		VehicleEntity vehicleEntity = entityManager.find(VehicleEntity.class, vehicleNo);
+		logger.info("Database returned VehicleEntity: " + vehicleEntity);
+		if(vehicleEntity==null)
+		{
+			logger.error("Vehicle entity was found null");
+			entityManager.getTransaction().commit();
+			throw new InvalidVehicleDataException("vehicleNo: " + vehicleNo);
+		}
+		else
+		{
+			logger.info("View vehicle data from database");
+			System.out.println("vehicle data :"+vehicleEntity);
+		}
+		entityManager.getTransaction().commit();
+		return vehicleEntity;
+	}
+
 	public VehicleEntity deleteVehicle(int vehicleNo) throws InvalidVehicleDataException {
 		entityManager.getTransaction().begin();
 		vehicleEntity = entityManager.find(VehicleEntity.class, vehicleNo);
@@ -63,28 +99,5 @@ public class VehicleDAOImpl implements VehicleDAO {
 			logger.info("Updated vehicleEntity: " + vehicleEntity);
 		}
 		return vehicleEntity;
-	}
-	
-	public VehicleEntity viewVehicleByNo(int vehicleNo) throws InvalidVehicleDataException {
-		vehicleEntity = entityManager.find(VehicleEntity.class, vehicleNo);
-		logger.info("Database returned VehicleEntity: " + vehicleEntity);
-		if(vehicleEntity==null)
-			throw new InvalidVehicleDataException("vehicleNo: " + vehicleNo);
-		return vehicleEntity;
-	}
-	
-	public VehicleEntity addVehicle(String vehicleName, String vehicleType, double farePerKm,int seatingCapacity,
-			 int driverId) throws InvalidVehicleDataException, InvalidDriverDataException {
-		entityManager.getTransaction().begin();
-		DriverEntity newDriverEntity = entityManager.find(DriverEntity.class, driverId);
-		if(newDriverEntity == null) {
-			throw new InvalidVehicleDataException("Invalid Driver ID: " + driverId);
-		} else {
-			vehicleEntity = new VehicleEntity(vehicleName, vehicleType, farePerKm, seatingCapacity, newDriverEntity);
-			entityManager.persist(vehicleEntity);
-		}
-		entityManager.getTransaction().commit();
-		return vehicleEntity;
-	}
-	
+	}	
 }

@@ -34,8 +34,8 @@ public class VehicleServiceImplementation implements VehicleService {
 		return VehicleUtils.convertVehicleEntityIntoVehicle(vehicleEntity);
 	}
 
-	public Vehicle addVehicle(String vehicleName, String vehicleType, double farePerKm, int seatingCapacity, int driverId) throws InvalidVehicleDataException, InvalidDriverDataException {
-		VehicleEntity vehicleEntity = vehicleDao.addVehicle(vehicleName, vehicleType, farePerKm, seatingCapacity, driverId);
+	public Vehicle addVehicle(Vehicle addedVehicle) throws InvalidVehicleDataException, InvalidDriverDataException {
+		VehicleEntity vehicleEntity = vehicleDao.addVehicle(addedVehicle);
 		logger.info("VehicleEntity: " + vehicleEntity);
 		return VehicleUtils.convertVehicleEntityIntoVehicle(vehicleEntity);		
 	}
