@@ -1,6 +1,5 @@
 package com.capg.travelagency.dao;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,9 +10,11 @@ import javax.persistence.Query;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.capg.travelagency.dto.Booking;
 import com.capg.travelagency.entity.BookingEntity;
 import com.capg.travelagency.entity.VehicleEntity;
 import com.capg.travelagency.exceptions.BookingNotFoundException;
+import com.capg.travelagency.exceptions.InvalidVehicleDataException;
 
 public class BookingDAOImplementation implements BookingDAO {
 
@@ -21,11 +22,9 @@ public class BookingDAOImplementation implements BookingDAO {
 		private static EntityManager entityManager;
 		
 		static {
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("AutomatedTravelAgencyPU");
+			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TravelAgencyPU");
 			entityManager = entityManagerFactory.createEntityManager();
 		}
-		
-		
 		
 		public BookingEntity viewById(int bookingId) throws BookingNotFoundException {
 			BookingEntity bookingEntity = entityManager.find(BookingEntity.class, bookingId);
@@ -56,22 +55,27 @@ public class BookingDAOImplementation implements BookingDAO {
 		}
 		
 		
-		public BookingEntity addBooking(Date bookingDate,String username,double fare,String bookingStatus,long mobileNo,int numOfPassenger,
-				Date journeyDate,String dropPoint,String boardingPoint,VehicleEntity vehicleEntity) 
-						throws BookingNotFoundException {
-			
-			BookingEntity bookEntityObj=new BookingEntity(java.sql.Date.valueOf("2020-06-18"), "kpatra",40.0,"confirm",9930826784L,4,java.sql.Date.valueOf("2020-12-18"),"kalyan","pune",vehicleEntity);
+		public BookingEntity addBooking(Booking addedBooking) 
+						throws BookingNotFoundException{
 			entityManager.getTransaction().begin();
-			entityManager.persist(bookEntityObj);
+			BookingEntity bookEntity = null;
+			VehicleEntity vehicleEntity=entityManager.find(VehicleEntity.class, addedBooking.getVehicleNo());
+			if(vehicleEntity == null) {
+				throw new BookingNotFoundException("VehicleNo is null");
+			} else {
+			 	bookEntity=new BookingEntity(addedBooking.getBookingDate(),addedBooking.getUsername(),addedBooking.getFare(),addedBooking.getBookingStatus(),
+			 			addedBooking.getMobileNo(),addedBooking.getNumOfPassenger(),
+						addedBooking.getJourneyDate(),addedBooking.getDropPoint(),addedBooking.getBoardingPoint(),vehicleEntity);
+				entityManager.persist(bookEntity);
+			}
 			entityManager.getTransaction().commit();
-			logger.info("vehicle is booked successfully" +bookEntityObj);
-			return bookEntityObj;
+			logger.info("vehicle is booked successfully" +bookEntity);
+			return bookEntity;
 		}
 		
 		public BookingEntity viewBookingStatusById(int bookingId) throws BookingNotFoundException {
 			BookingEntity bookingEntity = entityManager.find(BookingEntity.class, bookingId);
 			Query query = entityManager.createQuery("SELECT b.vehicle_id, b.booking_id,b.booking_date,b.journey_date,b.boarding_point,b.drop_point,b.mobile_no from Booking b");//JPQL
-			//Query query = entityManager.createNamedQuery("READ_ALL_BOOKINGS");
 			List <BookingEntity> booking = query.getResultList();//Fire JPQL query
 			for(BookingEntity be: booking) {
 				System.out.println("Booking = " + be);
@@ -88,7 +92,6 @@ public class BookingDAOImplementation implements BookingDAO {
 			BookingEntity bookingEntity = entityManager.find(BookingEntity.class, bookingId);
 			Query query = entityManager.createQuery("Delete from Booking b where b.booking_id=:booking_id");//JPQL
 			         query.executeUpdate();
-					//Query query = entityManager.createNamedQuery("Cancel_ALL_BOOKINGS")
 			List <BookingEntity> booking = query.getResultList();//Fire JPQL query
 			for(BookingEntity be: booking) {
 				System.out.println("booking = " + be);
@@ -98,6 +101,8 @@ public class BookingDAOImplementation implements BookingDAO {
 				throw new BookingNotFoundException("BookingId: " + bookingId);
 			return bookingEntity;
 		}
+
+
 
 
 		

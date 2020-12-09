@@ -16,11 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "booking")
-//@NamedQueries({
-//	@NamedQuery(name = "READ_ALL_BOOKINGS", 
-//	query =
-//	"SELECT b.vehicle_id, b.booking_id,b.booking_date,b.journey_date,b.boarding_point,b.drop_point,b.mobile_no from Booking b")
-//})
+
 public class BookingEntity {
 	
 	
@@ -29,23 +25,6 @@ public class BookingEntity {
 	@GeneratedValue
 	@Column(name = "booking_id")
 	private int bookingId;
-	
-	public BookingEntity(String username, double fare, String bookingStatus, long mobileNo, int numOfPassenger,
-			Date journeyDate, String dropPoint, String boardingPoint, VehicleEntity vehicleEntity) {
-		super();
-		this.username = username;
-		this.fare = fare;
-		this.bookingStatus = bookingStatus;
-		this.mobileNo = mobileNo;
-		this.numOfPassenger = numOfPassenger;
-		this.journeyDate = journeyDate;
-		this.dropPoint = dropPoint;
-		this.boardingPoint = boardingPoint;
-		this.vehicleEntity = vehicleEntity;
-	}
-
-
-	
 	
 	@Column(name = "booking_date")
 	private Date bookingDate;
@@ -87,6 +66,8 @@ public class BookingEntity {
 		super();
 	}
 
+	
+	
 	public BookingEntity(Date bookingDate, String username, double fare, String bookingStatus, long mobileNo,
 			int numOfPassenger, Date journeyDate, String dropPoint, String boardingPoint, VehicleEntity vehicleEntity) {
 		super();
@@ -118,6 +99,36 @@ public class BookingEntity {
 		this.boardingPoint = boardingPoint;
 		this.vehicleEntity = vehicleEntity;
 	}
+
+	public BookingEntity(String username, double fare, String bookingStatus, long mobileNo, int numOfPassenger,
+			Date journeyDate, String dropPoint, String boardingPoint, VehicleEntity vehicleEntity) {
+		super();
+		this.username = username;
+		this.fare = fare;
+		this.bookingStatus = bookingStatus;
+		this.mobileNo = mobileNo;
+		this.numOfPassenger = numOfPassenger;
+		this.journeyDate = journeyDate;
+		this.dropPoint = dropPoint;
+		this.boardingPoint = boardingPoint;
+		this.vehicleEntity = vehicleEntity;
+	}
+
+	public BookingEntity(Date bookingDate, String username, double fare, String bookingStatus, long mobileNo,
+			int numOfPassenger, Date journeyDate, String dropPoint, String boardingPoint) {
+		super();
+		this.bookingDate = bookingDate;
+		this.username = username;
+		this.fare = fare;
+		this.bookingStatus = bookingStatus;
+		this.mobileNo = mobileNo;
+		this.numOfPassenger = numOfPassenger;
+		this.journeyDate = journeyDate;
+		this.dropPoint = dropPoint;
+		this.boardingPoint = boardingPoint;
+	}
+
+
 
 	public int getBookingId() {
 		return bookingId;

@@ -8,6 +8,7 @@ import com.capg.travelagency.dao.BookingDAOImplementation;
 import com.capg.travelagency.dto.Booking;
 import com.capg.travelagency.entity.BookingEntity;
 import com.capg.travelagency.exceptions.BookingNotFoundException;
+import com.capg.travelagency.exceptions.InvalidVehicleDataException;
 import com.capg.travelagency.utils.BookingUtils;
 
 public class BookingServiceImplementation implements BookingService {
@@ -35,8 +36,8 @@ public class BookingServiceImplementation implements BookingService {
 		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
 	}
 
-	public Booking addBooking(int bookingId) throws BookingNotFoundException {
-		BookingEntity bookingEntity = bookingDao.viewById(bookingId);
+	public Booking addBooking(Booking addedBooking) throws BookingNotFoundException {
+		BookingEntity bookingEntity = bookingDao.addBooking(addedBooking);
 		logger.info("BookingEntity: " + bookingEntity);
 		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
 	}
@@ -46,9 +47,4 @@ public class BookingServiceImplementation implements BookingService {
 		logger.info("BookingEntity: " + bookingEntity);
 		return BookingUtils.convertBookingEntityIntoBooking(bookingEntity);
 	}
-
-
-	
-	
-	
 }
