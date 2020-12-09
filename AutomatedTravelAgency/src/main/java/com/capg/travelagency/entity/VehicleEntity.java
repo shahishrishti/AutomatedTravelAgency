@@ -42,12 +42,6 @@ public class VehicleEntity {
 	@JoinColumn(name = "driver_id")
 	private DriverEntity driverEntity;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "vehicle_route", 
-				joinColumns = { @JoinColumn(name = "vehicle_no") }, 
-				inverseJoinColumns = { @JoinColumn(name = "route_id") })
-	private Set<RouteEntity> routeEntity = new HashSet<RouteEntity>();
-	
 	public VehicleEntity() {
 		super();
 	}
@@ -73,23 +67,7 @@ public class VehicleEntity {
 		this.seatingCapacity = seatingCapacity;
 		this.driverEntity = driverEntity;
 	}
-
-	public VehicleEntity(String vehicleName, String vehicleType, double farePerKm, int seatingCapacity,
-			DriverEntity driverEntity, Set<RouteEntity> routeEntity) {
-		super();
-		this.vehicleName = vehicleName;
-		this.vehicleType = vehicleType;
-		this.farePerKm = farePerKm;
-		this.seatingCapacity = seatingCapacity;
-		this.driverEntity = driverEntity;
-		this.routeEntity = routeEntity;
-	}
-
 	
-	public VehicleEntity(int i, String string, String string2, double d, int j, int k) {
-		// TODO Auto-generated constructor stub
-	}
-
 	public int getVehicleNo() {
 		return vehicleNo;
 	}

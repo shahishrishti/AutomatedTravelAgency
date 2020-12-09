@@ -1,16 +1,15 @@
 package com.capg.travelagency.entity;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -34,11 +33,10 @@ public class RouteEntity {
 	@Column(name="duration")
 	private double duration;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "vehicle_route", 
-				joinColumns = { @JoinColumn(name = "route_id") }, 
-				inverseJoinColumns = { @JoinColumn(name = "vehicle_no") })
-	private Set<VehicleEntity> vehicleEntity = new HashSet<VehicleEntity>();
+	@OneToOne(cascade = {CascadeType.PERSIST},
+			fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "vehicle_no")
+	private VehicleEntity vehicleEntity;
 	 	
 	
 	//default constructor
@@ -65,7 +63,7 @@ public class RouteEntity {
 	
 
 	public RouteEntity(String source, String destination, double distance, double duration,
-			Set<VehicleEntity> vehicleEntity) {
+			VehicleEntity vehicleEntity) {
 		super();
 		this.source = source;
 		this.destination = destination;
@@ -93,6 +91,14 @@ public class RouteEntity {
 
 	public String getDestination() {
 		return this.destination;
+	}
+
+	public VehicleEntity getVehicleEntity() {
+		return vehicleEntity;
+	}
+
+	public void setVehicleEntity(VehicleEntity vehicleEntity) {
+		this.vehicleEntity = vehicleEntity;
 	}
 
 	public void setDestination(String destination) {

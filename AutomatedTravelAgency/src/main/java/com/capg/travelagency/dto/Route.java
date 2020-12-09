@@ -7,6 +7,7 @@ public class Route {
 	private String destination;
 	private  double distance;
 	private double duration;
+	private int vehicleNo;
 	
 	//default constructor
 	public Route() {
@@ -14,21 +15,23 @@ public class Route {
 	}
 
 	//parameterized constructor
-	public Route(int routeId, String source, String destination, double distance, double duration) {
+	public Route(int routeId, String source, String destination, double distance, double duration, int vehicleNo) {
 		super();
 		this.routeId = routeId;
 		this.source = source;
 		this.destination = destination;
 		this.distance = distance;
 		this.duration = duration;
+		this.vehicleNo = vehicleNo;
 	}
 
-	public Route(String source, String destination, double distance, double duration) {
+	public Route(String source, String destination, double distance, double duration, int vehicleNo) {
 		super();
 		this.source = source;
 		this.destination = destination;
 		this.distance = distance;
 		this.duration = duration;
+		this.vehicleNo = vehicleNo;
 	}
 
 	//getters and setters
@@ -62,6 +65,14 @@ public class Route {
 
 	public void setDistance(double distance) {
 		this.distance = distance;
+	}
+
+	public int getVehicleNo() {
+		return vehicleNo;
+	}
+
+	public void setVehicleNo(int vehicleNo) {
+		this.vehicleNo = vehicleNo;
 	}
 
 	public double getDuration() {

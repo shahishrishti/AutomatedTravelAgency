@@ -1,5 +1,11 @@
 package com.capg.travelagency.dao;
 
-public interface RouteDAO {
+import com.capg.travelagency.dto.Route;
+import com.capg.travelagency.entity.RouteEntity;
+import com.capg.travelagency.exceptions.InvalidRouteDataException;
+import com.capg.travelagency.exceptions.InvalidVehicleDataException;
 
+public interface RouteDAO {
+	public RouteEntity viewRouteByID(int routeID) throws InvalidRouteDataException;
+	public RouteEntity addRoute(Route addedRoute)  throws InvalidRouteDataException, InvalidVehicleDataException;
 }
