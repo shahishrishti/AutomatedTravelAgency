@@ -30,22 +30,20 @@ public class DriverControllerTest {
 		logger.info("[end] testDeleteDriverInvalidDriverId()");
 	}  
 	
-	  @Test
+	@Test
 	public void testDeleteDriverValidDriverId() throws  InvalidDriverDataException{
 		logger.info("[start] testDeleteDriverValidDriverId()");
 		assertNotNull("Valid Driver", driverController.deleteDriver(50));
 		logger.info("[end] testDeleteDriverValidDriverId()");
 	}
-	  
 	
-		
-		@Test
-		public void testModifyDriverValidDriverName() throws InvalidDriverDataException {
-			logger.info("[start] testModifyDriverValidDriverName()");
-		 Driver driver = new Driver(5, "Ramesh", "Pune", 9945201667l, "MH1420130083421");
-		 driverController.modifyDriver(driver);
-	     logger.info("[end] testModifyDriverValidDriverName()");
-		}  
+	  @Test
+	public void testModifyDriverValidDriverName() throws InvalidDriverDataException {
+		logger.info("[start] testModifyDriverValidDriverName()");
+		Driver driver = new Driver(5, "Ramesh", "Pune", 9945201667l, "MH1420130083421");
+		driverController.modifyDriver(driver);
+	    logger.info("[end] testModifyDriverValidDriverName()");
+	}  
 		
 		@Test(expected = InvalidDriverDataException.class)
 		public void testModifyDriverInvalidDriverName() throws InvalidDriverDataException {

@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.capg.travelagency.dto.Vehicle;
-import com.capg.travelagency.entity.VehicleEntity;
 import com.capg.travelagency.exceptions.InvalidDriverDataException;
 import com.capg.travelagency.exceptions.InvalidVehicleDataException;
 import com.capg.travelagency.service.VehicleService;

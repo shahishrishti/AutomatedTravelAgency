@@ -29,21 +29,20 @@ public class BookingControllerTest {
 		logger.info("[start] testAddBookingNoOfPassengers()");
 		Booking booking= new Booking(java.sql.Date.valueOf("2020-06-18"), "kpatra",40.0,"confirm",1,9930826784L,0,java.sql.Date.valueOf("2020-12-18"),"kalyan","pune");
 		bookingController.addBooking(booking);
-		logger.error("Number of passengers cannot be 0");
 		logger.info("[end] testAddBookingNoOfPassengersFail()");
 	}
-
+	
+	@Test
 	public void testAddBookingNoOfPassengersSuccess() throws BookingNotFoundException, InvalidVehicleDataException {
 		
 		logger.info("[start] testAddBookingNoOfPassengers()");
 		Booking booking= new Booking(java.sql.Date.valueOf("2020-06-18"), "kpatra",40.0,"confirm",8,9930826784L,1,java.sql.Date.valueOf("2020-12-18"),"kalyan","pune");
-		assertNotNull("Booking added",bookingController.addBooking(booking));
+		assertNotNull("BookingAdded",bookingController.addBooking(booking));
 		logger.info("[end] testAddBookingNoOfPassengersSuccess()");
 	}
 	
 	@Test(expected = BookingNotFoundException.class)
 	public void testAddBookingBoardingDropPointSuccess() throws BookingNotFoundException, InvalidVehicleDataException {
-		
 		logger.info("[start] testAddBookingBoardingDropPointSuccess()");
 		Booking booking= new Booking(java.sql.Date.valueOf("2020-06-18"), "kpatra",40.0,"confirm",8,9930826784L,2,java.sql.Date.valueOf("2020-12-18"),"thane","thane");
 		assertNotNull("Booking added",bookingController.addBooking(booking));
@@ -80,7 +79,7 @@ public class BookingControllerTest {
 	@Test
 	public void testCancelBookingIdSuccess() throws BookingNotFoundException {
 		logger.info("[start] testBookingId(()");
-		assertNotNull("Booking Cancelled", bookingController.cancelBookingById(126));
+		assertNotNull("Booking Cancelled", bookingController.cancelBookingById(87));
 		logger.info("[end] testBookingId(()");
 	}
 	

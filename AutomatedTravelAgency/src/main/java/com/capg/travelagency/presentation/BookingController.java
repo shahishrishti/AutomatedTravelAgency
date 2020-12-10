@@ -57,8 +57,10 @@ public class BookingController {
 		logger.info("Finding books for id: " + addedBooking);
 		Booking booking= null;
 		if(addedBooking.getNumOfPassenger() <= 0 ) {
+			logger.error("Number of passengers cannot be 0");
 			throw new BookingNotFoundException("No. of passengers is less tha 0");
 		}else if(addedBooking.getBoardingPoint().equals(addedBooking.getDropPoint())) {
+			logger.error("boarding Point and drop point cannot be same");
 			throw new BookingNotFoundException("boarding Point and drop point cannot be same");
 		}else {
 			try {

@@ -62,6 +62,7 @@ public class VehicleDAOImpl implements VehicleDAO {
 		return vehicleEntity;
 	}
 
+	//Delete Vehicle
 	public VehicleEntity deleteVehicle(int vehicleNo) throws InvalidVehicleDataException {
 		entityManager.getTransaction().begin();
 		vehicleEntity = entityManager.find(VehicleEntity.class, vehicleNo);
@@ -79,6 +80,7 @@ public class VehicleDAOImpl implements VehicleDAO {
 		return vehicleEntity;
 	}
 
+	//Modify Vehicle
 	public VehicleEntity modifyVehicle(Vehicle modifiedVehicle) throws InvalidVehicleDataException, InvalidDriverDataException {
 		entityManager.getTransaction().begin();
 		vehicleEntity = entityManager.find(VehicleEntity.class, modifiedVehicle.getVehicleNo());

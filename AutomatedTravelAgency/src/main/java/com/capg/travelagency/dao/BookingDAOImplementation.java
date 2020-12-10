@@ -62,20 +62,20 @@ public class BookingDAOImplementation implements BookingDAO {
 	}
 
 		public BookingEntity addBooking(Booking addedBooking) throws BookingNotFoundException, InvalidVehicleDataException {
-			entityManager.getTransaction().begin();
 			BookingEntity bookEntity = null;
 			VehicleEntity vehicleEntity = entityManager.find(VehicleEntity.class, addedBooking.getVehicleNo());
 			if(vehicleEntity == null) {
 				logger.error("Invalid vehicleEntity");
-				entityManager.getTransaction().commit();
 			    throw new InvalidVehicleDataException("Invalid Vehicle ID: " + addedBooking.getVehicleNo());
 			} else {
+				
 				bookEntity=new BookingEntity(addedBooking.getBookingDate(),addedBooking.getUsername(),addedBooking.getFare(),
 						addedBooking.getBookingStatus(), addedBooking.getMobileNo(),addedBooking.getNumOfPassenger(),
 						addedBooking.getJourneyDate(),addedBooking.getDropPoint(),addedBooking.getBoardingPoint(), vehicleEntity);
-	 			entityManager.persist(bookEntity);
+				entityManager.getTransaction().begin();
+				entityManager.persist(bookEntity);
+	 			entityManager.getTransaction().commit();
 			}
- 			entityManager.getTransaction().commit();
  			logger.info("vehicle is booked successfully" +bookEntity);
  			return bookEntity;
 		}
