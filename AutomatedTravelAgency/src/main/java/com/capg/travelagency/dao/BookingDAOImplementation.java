@@ -30,35 +30,36 @@ public class BookingDAOImplementation implements BookingDAO {
 		
 
 		public BookingEntity viewById(int bookingId) throws BookingNotFoundException {
+			entityManager.getTransaction().begin();
 			BookingEntity bookingEntity = entityManager.find(BookingEntity.class, bookingId);
-			Query query = entityManager.createQuery("SELECT b.vehicleEntity, b.bookingId,b.bookingDate,b.journeyDate,b.boardingPoint,b.dropPoint,b.mobileNo from BookingEntity b");//JPQL
-			//query = entityManager.createNamedQuery("booking.viewById");
-			List <BookingEntity> booking = query.getResultList();//Fire JPQL query
-			for(BookingEntity be: booking) {
-				System.out.println("Booking = " + be);
-			}
 			logger.info("Database returned BookingEntity: " + bookingEntity);
-			if(bookingEntity==null)
-				throw new BookingNotFoundException("BookingId: " + bookingId);//admin
+			if(bookingEntity==null) {
+				logger.error("Booking Entity was found null");
+				entityManager.getTransaction().commit();
+				throw new BookingNotFoundException("BookingId: " + bookingId);
+			}
+			else {
+				logger.info("View bookings from database");
+				System.out.println("Booking data : "+bookingEntity);
+			}
+			entityManager.getTransaction().commit();
 			return bookingEntity;
 		}
 		
 		
+
 		public BookingEntity viewAll(int bookingId) throws BookingNotFoundException {
-			BookingEntity bookingEntity = entityManager.find(BookingEntity.class, bookingId);
-			Query query = entityManager.createQuery("SELECT b.bookingId,b.vehicleName,b.Source,b.Destination from BookingEntity b, Vehicle v, Route r where"
-					+ "b.vehicleEntity=v.vehicleEntity AND v.vehicleEntity = r.vehicleEntity");//JPQL
-			// query = entityManager.createNamedQuery("booking.viewAll");
-			List <BookingEntity> booking = query.getResultList();//Fire JPQL query  //cust
-			for(BookingEntity be: booking) {
-				System.out.println("Booking = " + be);
-			}
-			logger.info("Database returned BookingEntity: " + bookingEntity);
-			if(bookingEntity==null)
-				throw new BookingNotFoundException();
-			return bookingEntity;
+		BookingEntity bookingEntity = entityManager.find(BookingEntity.class, bookingId);
+		Query query = entityManager.createQuery("SELECT b from booking b");//JPQL
+		List <BookingEntity> booking = query.getResultList();//Fire JPQL query  //cust
+		for(BookingEntity be: booking) {
+			System.out.println("Booking = " + be);
 		}
-		
+		logger.info("Database returned BookingEntity: " + bookingEntity);
+		if(bookingEntity==null)
+			throw new BookingNotFoundException();
+		return bookingEntity;
+	}
 
 		public BookingEntity addBooking(Booking addedBooking) throws BookingNotFoundException, InvalidVehicleDataException {
 			entityManager.getTransaction().begin();

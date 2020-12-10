@@ -33,7 +33,7 @@ public class DriverControllerTest {
 	  @Test
 	public void testDeleteDriverValidDriverId() throws  InvalidDriverDataException{
 		logger.info("[start] testDeleteDriverValidDriverId()");
-		assertNotNull("Valid Driver", driverController.deleteDriver(13));
+		assertNotNull("Valid Driver", driverController.deleteDriver(50));
 		logger.info("[end] testDeleteDriverValidDriverId()");
 	}
 	  

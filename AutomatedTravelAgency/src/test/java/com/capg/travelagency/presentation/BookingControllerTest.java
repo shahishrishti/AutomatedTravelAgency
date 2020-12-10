@@ -1,6 +1,7 @@
 package com.capg.travelagency.presentation;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -46,7 +47,6 @@ public class BookingControllerTest {
 		logger.info("[start] testAddBookingBoardingDropPointSuccess()");
 		Booking booking= new Booking(java.sql.Date.valueOf("2020-06-18"), "kpatra",40.0,"confirm",8,9930826784L,2,java.sql.Date.valueOf("2020-12-18"),"thane","thane");
 		assertNotNull("Booking added",bookingController.addBooking(booking));
-		logger.error("boarding point and drop point cannot be same");
 		logger.info("[end] testAddBookingBoardingDropPointSuccess()");
 	}
 
@@ -67,7 +67,7 @@ public class BookingControllerTest {
 	@Test (expected = BookingNotFoundException.class)
 	public void BookingSearchEmpty() throws BookingNotFoundException {
 		logger.info("[START] BookingSearchEmpty()");
-		assertNull("Booking Not Found", bookingController.viewById(123));//Checks that object is null,Fail
+		assertNull("Booking Not Found", bookingController.viewById(0));//Checks that object is null,Fail
 		logger.info("[END] BookingSearchEmpty()");
 	}
 
@@ -80,7 +80,7 @@ public class BookingControllerTest {
 	@Test
 	public void testCancelBookingIdSuccess() throws BookingNotFoundException {
 		logger.info("[start] testBookingId(()");
-		assertNotNull("Booking Cancelled", bookingController.cancelBookingById(46));
+		assertNotNull("Booking Cancelled", bookingController.cancelBookingById(126));
 		logger.info("[end] testBookingId(()");
 	}
 	

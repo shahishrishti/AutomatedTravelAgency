@@ -121,7 +121,7 @@ public class RouteControllerTest {
 	@Test
 	public void testDeleteRouteValidRouteId() throws InvalidRouteDataException {
 		logger.info("[start] testDeleteRouteValidRouteId()");
-		assertNotNull("Route Found to be deleted", routeController.deleteRoute(36));
+		assertNotNull("Route Found to be deleted", routeController.deleteRoute(62));
 		logger.info("[end] testDeleteRouteValidRouteId()");
 	}
 	

@@ -33,7 +33,7 @@ public class VehicleControllerTest {
 	@Test
 	public void testDeleteVehicleValidVehicleNo() throws InvalidVehicleDataException {
 		logger.info("[start] testDeleteVehicleValidVehicleNo()");
-		assertNotNull("Vehicle Found to be deleted", vehicleController.deleteVehicle(6));
+		assertNotNull("Vehicle Found to be deleted", vehicleController.deleteVehicle(49));
 		logger.info("[end] testDeleteVehicleValidVehicleNo()");
 	}
 	

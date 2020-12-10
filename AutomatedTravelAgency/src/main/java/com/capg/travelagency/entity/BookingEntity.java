@@ -52,7 +52,7 @@ public class BookingEntity {
 	
 	
 	
-	@OneToOne(cascade = {CascadeType.ALL},
+	@OneToOne(cascade = {CascadeType.PERSIST},
 			fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "vehicle_no")
 	private VehicleEntity vehicleEntity;
