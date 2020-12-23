@@ -11,7 +11,7 @@ import org.springframework.util.RouteMatcher.Route;
 
 import io.swagger.annotations.ApiModelProperty;
 
-public class booking {
+public class Booking {
 
 	
 	@Max(value=8)
@@ -74,7 +74,7 @@ public class booking {
 		this.route = route;
 	}
 
-	public booking(int bookingId, String username, long contactNo, int noOfPassengers,
+	public Booking(int bookingId, String username, long contactNo, int noOfPassengers,
 			 String boardingPoint,String dropPoint, Date journeyDate,
 			Date bookingDate, Date cancelDate, double fare,  String bookingStatus, int routeId,
 			Route route) {
@@ -192,7 +192,7 @@ public class booking {
 	
 	
 
-	public booking(int bookingId, String username, long contactNo, int noOfPassengers,
+	public Booking(int bookingId, String username, long contactNo, int noOfPassengers,
 			 String boardingPoint,  String dropPoint, Date journeyDate,
 			Date bookingDate, Date cancelDate, double fare, String bookingStatus, int routeId) {
 		super();
@@ -210,7 +210,7 @@ public class booking {
 		this.routeId = routeId;
 	}
 
-	public booking( String username, long contactNo, int noOfPassengers,
+	public Booking( String username, long contactNo, int noOfPassengers,
 			 String boardingPoint,  String dropPoint, Date journeyDate,
 			Date bookingDate, Date cancelDate, double fare,  String bookingStatus, int routeId) {
 		super();

@@ -1,5 +1,5 @@
 package com.cgtravelagency.json;
 
-public class driver {
+public class Driver {
 
 }
