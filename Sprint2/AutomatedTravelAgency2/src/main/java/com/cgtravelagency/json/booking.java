@@ -2,6 +2,8 @@ package com.cgtravelagency.json;
 
 import java.util.Date;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -12,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
 public class booking {
 
 	
-	
+	@Max(value=8)
 	@ApiModelProperty(value="Booking ID")
 	private int bookingId;
 	
@@ -21,6 +23,7 @@ public class booking {
 	@ApiModelProperty(value="Username")
 	private String username;
 	
+	@Min(value=10)
 	@ApiModelProperty(value="Contact Number")
 	private long contactNo;
 	
@@ -56,6 +59,7 @@ public class booking {
 	@ApiModelProperty(value="Booking Status")
 	private String bookingStatus;
 	
+	@Max(value=8)
 	@ApiModelProperty(value="Route ID")
 	private int routeId;
 	
