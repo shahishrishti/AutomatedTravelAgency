@@ -1,18 +1,13 @@
 package com.cgtravelagency.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,88 +15,104 @@ import javax.persistence.Table;
 public class VehicleEntity {
 
 	@Id
-	@GeneratedValue
-	@Column(name = "vehicleId")
-	private Long vehicleId;
-	
-	@Column(name = "vehicleName")
-	private String vehicleName;
-	
-	@Column(name = "vehicleType")
-	private String vehicleType;
-	
-	@Column(name = "seatingCapacity")
-	private int seatingCapacity;
-	
-	@Column(name = "farePerKm")
-	private double farePerKm;
-	
-	@Column(name = "vehicleNo")
+	@Column(name = "vehicleno")
 	private String vehicleNo;
 	
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinColumn(name="routeId")
-	private RouteEntity route;
+	@Column(name = "vehiclename")
+	private String vehicleName;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "vehicle_driver", 
-				joinColumns = { @JoinColumn(name = "vehicleId") }, 
-				inverseJoinColumns = { @JoinColumn(name = "driverId") })
-	private Set<DriverEntity> drivers = new HashSet<>();
+	@Column(name = "fare")
+	private double fare;
+	
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="typeid")
+	private VehicleTypeEntity vehicleType;
+	
+	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
+			fetch=FetchType.EAGER)
+	@JoinColumn(name="routeid")
+	private RouteEntity route;
 	
 	public VehicleEntity() {
 		super();
 	}
 
-	public VehicleEntity(String vehicleName, String vehicleType, int seatingCapacity, double farePerKm,
-			String vehicleNo) {
+	public VehicleEntity(String vehicleName, double fare, VehicleTypeEntity vehicleType) {
 		super();
 		this.vehicleName = vehicleName;
+		this.fare = fare;
 		this.vehicleType = vehicleType;
-		this.seatingCapacity = seatingCapacity;
-		this.farePerKm = farePerKm;
-		this.vehicleNo = vehicleNo;
 	}
 
-	public VehicleEntity(String vehicleName, String vehicleType, int seatingCapacity, double farePerKm,
-			String vehicleNo, RouteEntity route) {
+	public VehicleEntity(String vehicleName, double fare, VehicleTypeEntity vehicleType, RouteEntity route) {
 		super();
 		this.vehicleName = vehicleName;
+		this.fare = fare;
 		this.vehicleType = vehicleType;
-		this.seatingCapacity = seatingCapacity;
-		this.farePerKm = farePerKm;
-		this.vehicleNo = vehicleNo;
 		this.route = route;
 	}
 
-	public VehicleEntity(String vehicleName, String vehicleType, int seatingCapacity, double farePerKm,
-			String vehicleNo, RouteEntity route, Set<DriverEntity> drivers) {
+	public VehicleEntity(String vehicleNo, String vehicleName, double fare, VehicleTypeEntity vehicleType) {
 		super();
-		this.vehicleName = vehicleName;
-		this.vehicleType = vehicleType;
-		this.seatingCapacity = seatingCapacity;
-		this.farePerKm = farePerKm;
 		this.vehicleNo = vehicleNo;
-		this.route = route;
-		this.drivers = drivers;
+		this.vehicleName = vehicleName;
+		this.fare = fare;
+		this.vehicleType = vehicleType;
 	}
 
-	public VehicleEntity(String vehicleName, String vehicleType, int seatingCapacity, double farePerKm,
-			String vehicleNo, Set<DriverEntity> drivers) {
+	public VehicleEntity(String vehicleNo, String vehicleName, double fare, VehicleTypeEntity vehicleType,
+			RouteEntity route) {
 		super();
-		this.vehicleName = vehicleName;
-		this.vehicleType = vehicleType;
-		this.seatingCapacity = seatingCapacity;
-		this.farePerKm = farePerKm;
 		this.vehicleNo = vehicleNo;
-		this.drivers = drivers;
+		this.vehicleName = vehicleName;
+		this.fare = fare;
+		this.vehicleType = vehicleType;
+		this.route = route;
+	}
+
+	public String getVehicleNo() {
+		return vehicleNo;
+	}
+
+	public void setVehicleNo(String vehicleNo) {
+		this.vehicleNo = vehicleNo;
+	}
+
+	public String getVehicleName() {
+		return vehicleName;
+	}
+
+	public void setVehicleName(String vehicleName) {
+		this.vehicleName = vehicleName;
+	}
+
+	public double getFare() {
+		return fare;
+	}
+
+	public void setFare(double fare) {
+		this.fare = fare;
+	}
+
+	public VehicleTypeEntity getVehicleType() {
+		return vehicleType;
+	}
+
+	public void setVehicleType(VehicleTypeEntity vehicleType) {
+		this.vehicleType = vehicleType;
+	}
+
+	public RouteEntity getRoute() {
+		return route;
+	}
+
+	public void setRoute(RouteEntity route) {
+		this.route = route;
 	}
 
 	@Override
 	public String toString() {
-		return "VehicleEntity [vehicleId=" + vehicleId + ", vehicleName=" + vehicleName + ", vehicleType=" + vehicleType
-				+ ", seatingCapacity=" + seatingCapacity + ", farePerKm=" + farePerKm + ", vehicleNo=" + vehicleNo
-				+ ", route=" + route + ", drivers=" + drivers + "]";
+		return "VehicleEntity [vehicleNo=" + vehicleNo + ", vehicleName=" + vehicleName + ", fare=" + fare
+				+ ", vehicleType=" + vehicleType + ", route=" + route + "]";
 	}
-	
 }
