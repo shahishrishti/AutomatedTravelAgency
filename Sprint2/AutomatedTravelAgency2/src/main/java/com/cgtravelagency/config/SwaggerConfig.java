@@ -27,7 +27,7 @@ public class SwaggerConfig {
 	
 	public ApiInfo getApiInfo() {
 		ApiInfo apiInfo = new ApiInfo("Automated Travel Agency API Documentation",
-				"This is automated travel agency info",
+				"The documentation contains information about automated travel agency project",
 				"1.0.0",
 				"public terms of service",
 				new Contact("Shrishti Shahi", "http://shrishti.com", "shahishrishti@gmail.com"),
