@@ -31,8 +31,6 @@ public class RouteEntity {
 	@Column(name = "distance")
 	private double distance;
 	
-	private Vehicle vehicle;
-	
 	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, 
 			fetch=FetchType.LAZY, mappedBy = "route")
 	private Set<BookingEntity> booking;
@@ -73,16 +71,16 @@ public class RouteEntity {
 		this.booking = booking;
 	}
 
-	public RouteEntity(Long routeId, String source, String destination, double distance, Vehicle vehicle,
-			Set<BookingEntity> booking) {
-		super();
-		this.routeId = routeId;
-		this.source = source;
-		this.destination = destination;
-		this.distance = distance;
-		this.vehicle = vehicle;
-		this.booking = booking;
-	}
+//	public RouteEntity(Long routeId, String source, String destination, double distance, Vehicle vehicle,
+//			Set<BookingEntity> booking) {
+//		super();
+//		this.routeId = routeId;
+//		this.source = source;
+//		this.destination = destination;
+//		this.distance = distance;
+//		this.vehicle = vehicle;
+//		this.booking = booking;
+//	}
 
 	public Long getRouteId() {
 		return routeId;
@@ -124,18 +122,18 @@ public class RouteEntity {
 		this.booking = booking;
 	}
 
-	public Vehicle getVehicle() {
-		return vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
+//	public Vehicle getVehicle() {
+//		return vehicle;
+//	}
+//
+//	public void setVehicle(Vehicle vehicle) {
+//		this.vehicle = vehicle;
+//	}
 
 	@Override
 	public String toString() {
 		return "RouteEntity [routeId=" + routeId + ", source=" + source + ", destination=" + destination + ", distance="
-				+ distance + ", vehicle=" + vehicle + ", booking=" + booking + "]";
+				+ distance  + ", booking=" + booking + "]";
 	}
 	
 }

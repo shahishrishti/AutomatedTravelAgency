@@ -21,24 +21,24 @@ public class BookingServiceImpl implements BookingService {
 
 	@Override
 	public List<Booking> viewBookingsByUsername(String username) {
-		List<BookingEntity> bookingEntityList = bookingRepo.findByUsername(username);
-		List<Booking> bookings = new ArrayList<Booking>();
-		for(BookingEntity bookingEntity: bookingEntityList) {
-			Route route = new Route(bookingEntity.getRoute().getVehicle().getVehicleNo());
-			bookings.add(new Booking(bookingEntity.getBookingId(), bookingEntity.getJourneyDate(), bookingEntity.getBookingDate(), 
-					bookingEntity.getCancelDate(), bookingEntity.getFare(), bookingEntity.getBookingStatus(), bookingEntity.getVehicleType(), route));
-		}
-		return bookings;
+//		List<BookingEntity> bookingEntityList = bookingRepo.findByUsername(username);
+//		List<Booking> bookings = new ArrayList<Booking>();
+//		for(BookingEntity bookingEntity: bookingEntityList) {
+//			Route route = new Route(bookingEntity.getRoute().getVehicle().getVehicleNo());
+//			bookings.add(new Booking(bookingEntity.getBookingId(), bookingEntity.getJourneyDate(), bookingEntity.getBookingDate(), 
+//					bookingEntity.getCancelDate(), bookingEntity.getFare(), bookingEntity.getBookingStatus(), bookingEntity.getVehicleType(), route));
+//		}
+		return null;
 	}
 	@Override
 	public List<Booking> viewBookingsByStatus(String bookingStatus) {
-		List<BookingEntity> bookingEntityList = bookingRepo.findByBookingStatus(bookingStatus);
-		List<Booking> bookings = new ArrayList<Booking>();
-		for(BookingEntity bookingEntity: bookingEntityList) {
-			Route route = new Route(bookingEntity.getRoute().getVehicle().getVehicleNo());
-			bookings.add(new Booking(bookingEntity.getBookingId(), bookingEntity.getJourneyDate(), bookingEntity.getBookingDate(), 
-					bookingEntity.getCancelDate(), bookingEntity.getFare(), bookingEntity.getBookingStatus(), bookingEntity.getVehicleType(), route));
-		}
-		return bookings;
+//		List<BookingEntity> bookingEntityList = bookingRepo.findByBookingStatus(bookingStatus);
+//		List<Booking> bookings = new ArrayList<Booking>();
+//		for(BookingEntity bookingEntity: bookingEntityList) {
+//			Route route = new Route(bookingEntity.getRoute().getVehicle().getVehicleNo());
+//			bookings.add(new Booking(bookingEntity.getBookingId(), bookingEntity.getJourneyDate(), bookingEntity.getBookingDate(), 
+//					bookingEntity.getCancelDate(), bookingEntity.getFare(), bookingEntity.getBookingStatus(), bookingEntity.getVehicleType(), route));
+//		}
+		return null;
 	}
 }

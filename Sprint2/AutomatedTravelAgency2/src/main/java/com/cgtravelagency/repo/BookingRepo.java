@@ -9,6 +9,6 @@ import com.cgtravelagency.entity.BookingEntity;
 
 public interface BookingRepo extends JpaRepository<BookingEntity, Long> {
 
-	public List<BookingEntity> findByUsername(String username);
-	public List<BookingEntity> findByBookingStatus(String bookingStatus);
+//	public List<BookingEntity> findByUsername(String username);
+//	public List<BookingEntity> findByBookingStatus(String bookingStatus);
 }
