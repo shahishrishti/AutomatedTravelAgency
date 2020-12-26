@@ -8,7 +8,7 @@ public interface PlaceService {
 	
 	public Place createPlace(Place place);
 	public List<Place> getAllPlaces();
-	public Place updatePlace(Place place, Long placeId);
+	public Place updatePlace(Long placeId, Place place);
 	public boolean deleteById(Long placeId);
 	
 }

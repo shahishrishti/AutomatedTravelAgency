@@ -59,8 +59,8 @@ public class PlaceController {
 			@ApiResponse(code=404, message="No such Place found")
 	})
 	@PutMapping(value="/place/{placeId}", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Place updatePlace(@RequestBody Place place, @PathVariable Long placeId) {
-		return placeService.updatePlace(place, placeId);
+	public Place updatePlace(@PathVariable Long placeId,@Valid @RequestBody Place place) {
+		return placeService.updatePlace(placeId, place);
 	}
 	
 	@ApiOperation(value="Deletes Place")

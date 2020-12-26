@@ -29,7 +29,7 @@ public class PlaceServiceImpl implements PlaceService{
 	}
 
 	@Override
-	public Place updatePlace(Place place, Long placeId) {
+	public Place updatePlace(Long placeId, Place place) {
 		Optional<PlaceEntity> placeEntityOp = placeRepo.findById(placeId);
 		if(placeEntityOp.isPresent()) {
 			PlaceEntity placeEntity = placeEntityOp.get();

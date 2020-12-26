@@ -59,7 +59,7 @@ public class VehicleTypeController {
 			@ApiResponse(code=404, message="No such vehicleType found")
 	})
 	@PutMapping(value="/vehicletype/{typeId}", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public VehicleType updateVehicleType(@RequestBody VehicleType vehicleType, @PathVariable Long typeId) {
+	public VehicleType updateVehicleType(@Valid @RequestBody VehicleType vehicleType, @PathVariable Long typeId) {
 		return vehicleTypeService.updateVehicleType(vehicleType, typeId);
 	}
 	
