@@ -2,6 +2,8 @@ package com.cgtravelagency.json;
 
 import java.util.Set;
 
+import com.cgtravelagency.entity.RouteEntity;
+
 public class Route {
 	
 	private Long routeid;
@@ -9,6 +11,7 @@ public class Route {
 	private String destination;
 	private double distance;
 	private Set<Booking> bookings;
+	private String vehicleNo;
 	
 	public Route() {
 		super();
@@ -45,6 +48,11 @@ public class Route {
 		this.destination = destination;
 		this.distance = distance;
 		this.bookings = bookings;
+	}
+
+	public Route(String vehicleNo) {
+		super();
+		this.vehicleNo = vehicleNo;
 	}
 
 	public Long getRouteid() {
@@ -87,10 +95,18 @@ public class Route {
 		this.bookings = bookings;
 	}
 
+	public String getVehicleNo() {
+		return vehicleNo;
+	}
+
+	public void setVehicleNo(String vehicleNo) {
+		this.vehicleNo = vehicleNo;
+	}
+
 	@Override
 	public String toString() {
 		return "Route [routeid=" + routeid + ", source=" + source + ", destination=" + destination + ", distance="
-				+ distance + ", bookings=" + bookings + "]";
+				+ distance + ", bookings=" + bookings + ", vehicleNo=" + vehicleNo + "]";
 	}
 	
 }
