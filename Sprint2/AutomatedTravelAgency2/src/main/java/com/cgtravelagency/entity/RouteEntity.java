@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.cgtravelagency.json.Vehicle;
+
 @Entity
 @Table(name = "route")
 public class RouteEntity {
@@ -28,6 +30,8 @@ public class RouteEntity {
 	
 	@Column(name = "distance")
 	private double distance;
+	
+	private Vehicle vehicle;
 	
 	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, 
 			fetch=FetchType.LAZY, mappedBy = "route")
@@ -66,6 +70,17 @@ public class RouteEntity {
 		this.source = source;
 		this.destination = destination;
 		this.distance = distance;
+		this.booking = booking;
+	}
+
+	public RouteEntity(Long routeId, String source, String destination, double distance, Vehicle vehicle,
+			Set<BookingEntity> booking) {
+		super();
+		this.routeId = routeId;
+		this.source = source;
+		this.destination = destination;
+		this.distance = distance;
+		this.vehicle = vehicle;
 		this.booking = booking;
 	}
 
@@ -109,10 +124,18 @@ public class RouteEntity {
 		this.booking = booking;
 	}
 
+	public Vehicle getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
+	}
+
 	@Override
 	public String toString() {
 		return "RouteEntity [routeId=" + routeId + ", source=" + source + ", destination=" + destination + ", distance="
-				+ distance + ", booking=" + booking + "]";
+				+ distance + ", vehicle=" + vehicle + ", booking=" + booking + "]";
 	}
 	
 }
