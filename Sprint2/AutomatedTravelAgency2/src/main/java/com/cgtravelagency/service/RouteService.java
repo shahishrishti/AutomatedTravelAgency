@@ -1,5 +1,8 @@
 package com.cgtravelagency.service;
 
-public interface RouteService {
+import java.util.List;
 
+public interface RouteService {
+	
+	public List<String> getAllSourceAndDestination();
 }
