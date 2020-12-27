@@ -40,16 +40,16 @@ public class VehicleController {
 	
 	//--------------------Update Vehicle-------------------------------------------- 
 	
-	@ApiOperation(value="Update Vehicle")
-	@ApiResponses(value= {
-			@ApiResponse(code=201, message="New vehicleType created"),
-			@ApiResponse(code=404, message="No such vehicleType found")
-	})
-	@PutMapping(value = "/vehicle/{vehicleNo}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Vehicle updateVehicle(@PathVariable String vehicleNo, @Valid @RequestBody Vehicle vehicle) throws InvalidVehicleDataException {
-		logger.info("Update Vehicle Called!!");
-		return vehicleService.updateVehicle(vehicleNo, vehicle);
-	}
+		@ApiOperation(value="Update Vehicle")
+		@ApiResponses(value= {
+				@ApiResponse(code=201, message="New vehicleType created"),
+				@ApiResponse(code=404, message="No such vehicleType found")
+		})
+		@PutMapping(value = "/vehicle/{vehicleNo}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+		public Vehicle updateVehicle(@PathVariable String vehicleNo, @Valid @RequestBody Vehicle vehicle) throws InvalidVehicleDataException {
+			logger.info("Update Vehicle Called!!");
+			return vehicleService.updateVehicle(vehicleNo, vehicle);
+		}
 	
 	//--------------------Delete Vehicle--------------------------------------------
 	
@@ -75,7 +75,7 @@ public class VehicleController {
 			return vehicleService.getAllVehicles();
 		}
 		
-		//------------------View Vehicle by Name----------------------------------------
+	//------------------View Vehicle by Name----------------------------------------
 		@ApiOperation(value="Returns all vehicles by Name")
 		@ApiResponses(value= {
 				@ApiResponse(code=201, message="Vehicles found with vehicleName"),
@@ -87,7 +87,7 @@ public class VehicleController {
 			return vehicleService.getVehicleByName(vehicleName);
 		}
 		
-		//------------------View Vehicle By No------------------------------------------
+	//------------------View Vehicle By No------------------------------------------
 		@ApiOperation(value="Returns vehicle By No")
 		@ApiResponses(value= {
 				@ApiResponse(code=200, message="Vehicles found with vehicleNo"),
@@ -99,7 +99,7 @@ public class VehicleController {
 			return vehicleService.getVehicleByNo(vehicleNo);
 		}
 		
-		//----------------View Vehicle By Fare-------------------------------------------
+	//----------------View Vehicle By Fare-------------------------------------------
 		@ApiOperation(value="Returns vehicle By No")
 		@ApiResponses(value= {
 				@ApiResponse(code=200, message="Vehicles found with fare"),
