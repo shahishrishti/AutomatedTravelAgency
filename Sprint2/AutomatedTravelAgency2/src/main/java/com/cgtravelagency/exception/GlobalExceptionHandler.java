@@ -40,16 +40,20 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		
 	}
 	
-<<<<<<< HEAD
 	@ExceptionHandler(value = {InvalidRouteDataException.class})
 	public ResponseEntity<ErrorMessage> handleInvalidRouteDataException(InvalidRouteDataException ex) {
-		String error = "Invalid route data.";
-=======
+		String error = "Invalid vehicle data.";
+
+		ErrorMessage errorMessage = 
+	      new ErrorMessage(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
+	    return new ResponseEntity<ErrorMessage>(
+	    		errorMessage, new HttpHeaders(), errorMessage.getStatus());
+		
+	}
+	
 	@ExceptionHandler(value = {VehicleNotFoundException.class})
-	public ResponseEntity<ErrorMessage> handleVehicleNotFoundException(
-			VehicleNotFoundException ex) {
-		String error = "Vehicle is not found";
->>>>>>> branch 'master' of https://github.com/shahishrishti/AutomatedTravelAgency.git
+	public ResponseEntity<ErrorMessage> handleVehicleNotFoundException(VehicleNotFoundException ex) {
+		String error = "Invalid vehicle data.";
 
 		ErrorMessage errorMessage = 
 	      new ErrorMessage(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
