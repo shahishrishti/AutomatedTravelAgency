@@ -44,6 +44,18 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		
 	}
 	
+	@ExceptionHandler(value = {VehicleNotFoundException.class})
+	public ResponseEntity<ErrorMessage> handleVehicleNotFoundException(
+			VehicleNotFoundException ex) {
+		String error = "Vehicle is not found";
+
+		ErrorMessage errorMessage = 
+	      new ErrorMessage(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
+	    return new ResponseEntity<ErrorMessage>(
+	    		errorMessage, new HttpHeaders(), errorMessage.getStatus());
+		
+	}
+	
 	@Override
 	public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status,
             WebRequest request) {
