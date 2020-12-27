@@ -2,15 +2,34 @@ package com.cgtravelagency.json;
 
 import java.util.Set;
 
-import com.cgtravelagency.entity.RouteEntity;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import io.swagger.annotations.ApiModelProperty;
 
 public class Route {
 	
+	@Min(value = 1)
+	@ApiModelProperty(value="RouteId")
 	private Long routeid;
+	
+	@NotNull
+	@NotBlank
+	@ApiModelProperty(value="Source")
 	private String source;
+	
+	@NotNull
+	@NotBlank
+	@ApiModelProperty(value="Destination")
 	private String destination;
+	
+	@Min(value = 1)
+	@ApiModelProperty(value="Distance")
 	private double distance;
+	
 	private Set<Booking> bookings;
+	
 	private String vehicleNo;
 	
 	public Route() {

@@ -1,5 +1,6 @@
 package com.cgtravelagency.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.cgtravelagency.entity.VehicleEntity;
 import com.cgtravelagency.exception.InvalidVehicleDataException;
+import com.cgtravelagency.exception.VehicleNotFoundException;
 import com.cgtravelagency.json.Vehicle;
 import com.cgtravelagency.repo.VehicleRepo;
 import com.cgtravelagency.util.VehicleTypeUtil;
@@ -39,4 +41,39 @@ public class VehicleServiceImpl implements VehicleService {
 		return true;
 	}
 	
+	@Override
+	public List<Vehicle> getAllVehicles() {
+		return VehicleUtil.convertVehicleEntityListIntoVehicleList(vehicleRepo.findAll());
+	}
+
+
+	@Override
+	public List<Vehicle> getVehicleByName(String vehicleName) throws VehicleNotFoundException {
+		
+			return VehicleUtil.convertVehicleEntityListIntoVehicleList(vehicleRepo.findByVehicleName(vehicleName));
+	}
+		
+	
+	
+
+	@Override
+	public Vehicle getVehicleByNo(String vehicleNo) throws VehicleNotFoundException {
+		Optional<VehicleEntity> opVehicleEntity = vehicleRepo.findById(vehicleNo);
+		if(opVehicleEntity.isPresent()) {
+			VehicleEntity vehicleEntity = opVehicleEntity.get();
+			
+			return VehicleUtil.convertVehicleEntityIntoVehicle(vehicleEntity);
+		}
+		else {
+			throw new VehicleNotFoundException("vehicleNo: " +vehicleNo);
+		}
+	}
+
+
+	@Override
+	public List<Vehicle> getVehicleByFare(double fare) throws VehicleNotFoundException {
+
+		return VehicleUtil.convertVehicleEntityListIntoVehicleList(vehicleRepo.findByFare(fare));
+	}
+
 }
