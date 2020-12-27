@@ -37,32 +37,32 @@ public class VehicleController {
 	private VehicleService vehicleService;
 	private Logger logger = LogManager.getLogger(VehicleController.class.getName());
 	
-	@ApiOperation(value="Updates Vehicle")
+	
+	//--------------------Update Vehicle-------------------------------------------- 
+	
+	@ApiOperation(value="Update Vehicle")
 	@ApiResponses(value= {
 			@ApiResponse(code=201, message="New vehicleType created"),
 			@ApiResponse(code=404, message="No such vehicleType found")
 	})
 	@PutMapping(value = "/vehicle/{vehicleNo}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Vehicle updateVehicle(@PathVariable String vehicleNo, @Valid @RequestBody Vehicle vehicle) throws InvalidVehicleDataException {
-		try {
-			logger.info("Update Vehicle Called!!");
-			return vehicleService.updateVehicle(vehicleNo, vehicle);
-		} catch(InvalidVehicleDataException invalidVehicleDataException) {
-			logger.error(invalidVehicleDataException.getLocalizedMessage());
-			return null;
-		}
+		logger.info("Update Vehicle Called!!");
+		return vehicleService.updateVehicle(vehicleNo, vehicle);
 	}
 	
-	@ApiOperation(value="Delete Vehicle")
-	@ApiResponses(value= {
-			@ApiResponse(code=201, message="New vehicleType created"),
-			@ApiResponse(code=404, message="No such vehicleType found")
-	})
-	@DeleteMapping(value = "/vehicle/{vehicleNo}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public boolean deleteVehicle(@PathVariable String vehicleNo) throws InvalidVehicleDataException {
-		logger.info("Delete Vehicle Called!!");
-		return vehicleService.deleteVehicle(vehicleNo);
-	}
+	//--------------------Delete Vehicle--------------------------------------------
+	
+		@ApiOperation(value="Delete Vehicle")
+		@ApiResponses(value= {
+				@ApiResponse(code=201, message="New vehicleType created"),
+				@ApiResponse(code=404, message="No such vehicleType found")
+		})
+		@DeleteMapping(value = "/vehicle/{vehicleNo}", produces = MediaType.APPLICATION_JSON_VALUE)
+		public boolean deleteVehicle(@PathVariable String vehicleNo) throws InvalidVehicleDataException {
+			logger.info("Delete Vehicle Called!!");
+			return vehicleService.deleteVehicle(vehicleNo);
+		}
 	
 	//-------------------View all Vehicles-------------------------------------------
 		@ApiOperation(value="Returns all vehicles")
