@@ -40,6 +40,17 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		
 	}
 	
+	@ExceptionHandler(value = {InvalidDriverDataException.class})
+	public ResponseEntity<ErrorMessage> handleInvalidDriverDataException(InvalidDriverDataException ex) {
+		String error = "Invalid vehicle data.";
+
+		ErrorMessage errorMessage = 
+	      new ErrorMessage(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
+	    return new ResponseEntity<ErrorMessage>(
+	    		errorMessage, new HttpHeaders(), errorMessage.getStatus());
+		
+	}
+	
 	@ExceptionHandler(value = {InvalidRouteDataException.class})
 	public ResponseEntity<ErrorMessage> handleInvalidRouteDataException(InvalidRouteDataException ex) {
 		String error = "Invalid vehicle data.";
