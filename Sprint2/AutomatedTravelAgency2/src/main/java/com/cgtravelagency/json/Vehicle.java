@@ -1,11 +1,28 @@
 package com.cgtravelagency.json;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 public class Vehicle {
 	
+	@NotNull
+	@NotBlank
+	@Pattern(regexp="^[A-Z]{2}\\s[0-9]{2}\\s[A-Z]{2}\\s[0-9]{4}$", message = "Vehicle Number should be of a valid format")
 	private String vehicleNo;
+	
+	@NotNull
+	@NotBlank
+	@Pattern(regexp="^[\\\\p{L} .'-]+$", message = "Vehicle Name should be of valid format")
 	private String vehicleName;
+	
+	@Min(value = 20, message = "Minimum Fare Per Km should be 20.")
 	private double fare;
+	
+	@NotNull
 	private VehicleType vehicleType;
+	
 	private Route route;
 	
 	public Vehicle() {
