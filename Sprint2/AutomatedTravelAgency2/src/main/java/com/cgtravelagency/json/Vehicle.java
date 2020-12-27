@@ -14,7 +14,6 @@ public class Vehicle {
 	
 	@NotNull
 	@NotBlank
-	@Pattern(regexp="^[\\\\p{L} .'-]+$", message = "Vehicle Name should be of valid format")
 	private String vehicleName;
 	
 	@Min(value = 20, message = "Minimum Fare Per Km should be 20.")
