@@ -10,4 +10,5 @@ public interface VehicleTypeService {
 	public List<VehicleType> getAllVehicleTypes();
 	public VehicleType updateVehicleType(VehicleType vehicleType, Long typeId);
 	public boolean deleteById(Long typeid);
+	public List<String> getAllVehicleTypeNames();
 }
