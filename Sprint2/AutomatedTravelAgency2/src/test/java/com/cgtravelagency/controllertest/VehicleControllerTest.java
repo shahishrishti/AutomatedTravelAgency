@@ -154,6 +154,42 @@ class VehicleControllerTest {
 		logger.info("[END] Test to Modify by Valid Vehicle Type");
 		
 	}
+	
+	@Test
+	void testModifyByValidFare() {
+		
+		logger.info("[START] Test to Modify by Valid Fare");
+		Vehicle vehicle = new Vehicle("MP 01 AF 8192", "Swift", 90, new VehicleType(1l, "Car", 4), null);
+		restTemplate.put("http://localhost:9090/cgata/vehicle/MP 01 AF 8192", vehicle, Vehicle.class);
+		logger.info("[END] Test to Modify by Valid Fare");
+		
+	}
+	
+	@Test
+	void testModifyByZeroFare() {
+		
+		logger.info("[START] Test to Modify by Zero Fare");
+		Vehicle vehicle = new Vehicle("MP 01 AF 8192", "Swift", 0, new VehicleType(1l, "Car", 4), null);
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
+			restTemplate.put("http://localhost:9090/cgata/vehicle/MP 01 AF 8192", vehicle, Vehicle.class);
+		});
+		logger.error(exception.getLocalizedMessage());
+		logger.info("[END] Test to Modify by Zero Fare");
+		
+	}
+	
+	@Test
+	void testModifyByNegativeFare() {
+		
+		logger.info("[START] Test to Modify by Negative Fare");
+		Vehicle vehicle = new Vehicle("MP 01 AF 8192", "Swift", -100, new VehicleType(1l, "Car", 4), null);
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
+			restTemplate.put("http://localhost:9090/cgata/vehicle/MP 01 AF 8192", vehicle, Vehicle.class);
+		});
+		logger.error(exception.getMessage());
+		logger.info("[END] Test to Modify by Negative Fare");
+		
+	}
 		
 	@Test
 	void testAddVehicleWithValidVehicleNo()
