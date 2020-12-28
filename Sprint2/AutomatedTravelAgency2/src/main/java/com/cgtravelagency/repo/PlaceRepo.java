@@ -9,6 +9,6 @@ import com.cgtravelagency.entity.PlaceEntity;
 
 public interface PlaceRepo extends JpaRepository<PlaceEntity, Long> {
 
-	@Query("Select p.placeName from PlaceEntity v")
+	@Query("Select p.placeName from PlaceEntity p")
 	public List<String> getAllPlaceNames();
 }
