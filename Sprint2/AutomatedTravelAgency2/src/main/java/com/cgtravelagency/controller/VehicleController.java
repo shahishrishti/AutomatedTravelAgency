@@ -101,7 +101,7 @@ public class VehicleController {
 				@ApiResponse(code=201, message="Vehicles found with vehicleName"),
 				@ApiResponse(code=404, message="No such vehicle found")
 		})
-		@GetMapping(value="/vehicle/{vehicleName}/filter", produces=MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(value="/vehicle/filter/{vehicleName}", produces=MediaType.APPLICATION_JSON_VALUE)
 		public List<Vehicle> getVehicleByName(@PathVariable String vehicleName) throws VehicleNotFoundException
 		{
 			
@@ -117,7 +117,7 @@ public class VehicleController {
 				@ApiResponse(code=200, message="Vehicles found with vehicleNo"),
 				@ApiResponse(code=404, message="No such vehicle found")
 		})
-		@GetMapping(value="/vehicle/{vehicleNo}", produces=MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(value="/vehicle/filters/{vehicleNo}", produces=MediaType.APPLICATION_JSON_VALUE)
 		public Vehicle getVehicleByNo(@PathVariable String vehicleNo) throws VehicleNotFoundException
 		{
 			logger.info("Finding Vehicle with Vehicle No");
@@ -131,7 +131,7 @@ public class VehicleController {
 				@ApiResponse(code=200, message="Vehicles found with fare"),
 				@ApiResponse(code=404, message="No such vehicles found")
 		})
-		@GetMapping(value="/vehicle/{fare}/filters", produces=MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(value="/vehicle/filtering/{fare}", produces=MediaType.APPLICATION_JSON_VALUE)
 		public List<Vehicle> getVehicleByFare(@PathVariable double fare) throws VehicleNotFoundException
 		{
 			logger.info("Finding Vehicle with Fare per Km");
