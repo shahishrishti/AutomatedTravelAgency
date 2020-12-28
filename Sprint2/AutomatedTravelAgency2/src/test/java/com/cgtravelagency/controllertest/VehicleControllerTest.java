@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -46,6 +47,7 @@ class VehicleControllerTest {
 		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
 			restTemplate.delete("http://localhost:9090/cgata/vehicle/\"\"", Vehicle.class);
 		});
+		logger.error(exception);
 		logger.info("[END] Test to Delete by Blank Vehicle No");
 		
 	}
@@ -57,6 +59,7 @@ class VehicleControllerTest {
 		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
 			restTemplate.delete("http://localhost:9090/cgata/vehicle/MH###", Vehicle.class);
 		});
+		logger.error(exception);
 		logger.info("[END] Test to Delete by Invalid Vehicle No");
 		
 	}
@@ -79,6 +82,7 @@ class VehicleControllerTest {
 		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
 			restTemplate.put("http://localhost:9090/cgata/vehicle/\"\"", vehicle, Vehicle.class);
 		});
+		logger.error(exception);
 		logger.info("[END] Test to Modify by Blank Vehicle No");
 		
 	}
@@ -91,6 +95,7 @@ class VehicleControllerTest {
 		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
 			restTemplate.put("http://localhost:9090/cgata/vehicle/MH###", vehicle, Vehicle.class);
 		});
+		logger.error(exception);
 		logger.info("[END] Test to Modify by Invalid Vehicle No");
 		
 	}
@@ -102,6 +107,7 @@ class VehicleControllerTest {
 		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
 			restTemplate.put("http://localhost:9090/cgata/vehicle/MH 01 AB 1234", vehicle, Vehicle.class);
 		});
+		logger.error(exception);
 		logger.info("[END] Test to Modify by Blank Vehicle Name");
 	}
 	
@@ -116,6 +122,16 @@ class VehicleControllerTest {
 		logger.info("[END] Test to Modify by Null Vehicle Name");
 	}
 	
+	@Test
+	void testModifyByValidVehicleName() {
+		
+		logger.info("[START] Test to Modify by Valid Vehicle Name");
+		Vehicle vehicle = new Vehicle("MH 01 AB 8192", "Swift", 90, new VehicleType(1l, "Car", 4), null);
+		restTemplate.put("http://localhost:9090/cgata/vehicle/MH 01 AB 1234", vehicle, Vehicle.class);
+		logger.info("[END] Test to Modify by Valid Vehicle Name");
+		
+	}
+		
 	@Test
 	void testAddVehicleWithValidVehicleNo()
 	{
