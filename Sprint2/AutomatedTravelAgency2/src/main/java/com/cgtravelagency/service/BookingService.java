@@ -12,7 +12,5 @@ public interface BookingService {
 	public List<Booking> findByBookingId(long bookingID);
 	public Booking addBooking(Booking booking);
 	public List<Booking> viewAllBookings();
-	public List<Booking> viewByNameAndRoute(User user, Route route);
-	//List<Booking> getAllRoute(Long routeid);
 	public List<Route> getAllRoute();
 }

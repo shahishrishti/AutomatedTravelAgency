@@ -110,16 +110,4 @@ public class BookingController {
 			logger.info("View all booking service started..");
 			return bookingService.getAllRoute() ;
 		}
-		
-		
-		@ApiOperation(value="Returns all bookings")                           //view by user name and route
-		@ApiResponses(value={
-			@ApiResponse(code=201,message="Bookings found by status"),
-			@ApiResponse(code=404,message="No such booking found")
-			})
-		@GetMapping(value="/booking/user/route", produces=MediaType.APPLICATION_JSON_VALUE)
-		public List<Booking> viewByNameAndRoute(User user,Route route) {
-			logger.info("View all booking service started..");
-			return bookingService.viewByNameAndRoute( user,route);
-		}
 }

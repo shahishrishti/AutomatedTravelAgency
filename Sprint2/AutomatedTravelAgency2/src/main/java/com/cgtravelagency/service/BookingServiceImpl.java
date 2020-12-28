@@ -86,14 +86,4 @@ public class BookingServiceImpl implements BookingService {
 		return routes; 
 	}
 	 
-	@Override
-	public List<Booking> viewByNameAndRoute(User user, Route route) {
-		List<BookingEntity> bookingEntityList =bookingRepo.findByUserAndRoute(user,route);
-		List<Booking> bookings = new ArrayList<Booking>();
-		for(BookingEntity bookingEntity: bookingEntityList) {
-			bookings.add(new Booking(bookingEntity.getBookingId(), bookingEntity.getJourneyDate(), bookingEntity.getBookingDate(), 
-					bookingEntity.getCancelDate(), bookingEntity.getFare(), bookingEntity.getBookingStatus(), bookingEntity.getVehicleType(), route));
-		}
-		return bookings;
-	}
 }
