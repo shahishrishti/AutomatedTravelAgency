@@ -24,4 +24,8 @@ public interface VehicleService {
 	
 	public Vehicle createNewVehicle(@Valid Vehicle vehicle) throws InvalidVehicleDataException;
 	
+	public List<String> getAllVehicleNames();
+	
+	public List<String> getAllVehicleNos();
+	
 } 

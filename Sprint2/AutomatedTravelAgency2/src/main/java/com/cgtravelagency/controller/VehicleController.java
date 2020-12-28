@@ -69,22 +69,16 @@ public class VehicleController {
 		}
 	
 	//-------------------------Add vehicle--------------------------------------------
-	@ApiOperation(value="Add New Vehicle")
-	@ApiResponses(value= {
-			@ApiResponse(code=201, message="New vehicle added")
-			
-	})
-	@PostMapping(value="/vehicle/add", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Vehicle> createNewEmployee(@Valid @RequestBody Vehicle vehicle) throws InvalidVehicleDataException {
-		try {
+		@ApiOperation(value="Add New Vehicle")
+		@ApiResponses(value= {
+				@ApiResponse(code=201, message="New vehicle added")
+				
+		})
+		@PostMapping(value="/vehicle/add", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
+		public ResponseEntity<Vehicle> createNewEmployee(@Valid @RequestBody Vehicle vehicle) throws InvalidVehicleDataException {
 			logger.info("Add Vehicle Called!!");
-		return new ResponseEntity<Vehicle>(vehicleService.createNewVehicle(vehicle), HttpStatus.OK);
-		} catch(InvalidVehicleDataException invalidVehicleDataException)
-		{
-			logger.error(invalidVehicleDataException.getLocalizedMessage());
-			return null;
+			return new ResponseEntity<Vehicle>(vehicleService.createNewVehicle(vehicle), HttpStatus.OK);
 		}
-	}
 	
 	
 	//-------------------View all Vehicles-------------------------------------------
@@ -134,16 +128,28 @@ public class VehicleController {
 			return vehicleService.getVehicleByFare(fare);
 		}
 		
-		/*-------------View Vehicle By Seating capacity------------------------------
-		@ApiOperation(value="Returns vehicle By No")
+	//-------------------Get All Vehicle Names-----------------------------------------------
+		@ApiOperation(value="Returns all the vehicle Names")
 		@ApiResponses(value= {
 				@ApiResponse(code=200, message="Vehicles found with fare"),
 				@ApiResponse(code=404, message="No such vehicles found")
 		})
-		@GetMapping(value="/vehicle/{seatingCapacity}/filtering", produces=MediaType.APPLICATION_JSON_VALUE)
-		public List<Vehicle> getVehicleBySeatingCapacity(@PathVariable int seatingCapacity) throws VehicleNotFoundException
+		@GetMapping(value="/vehicle/filterNames", produces=MediaType.APPLICATION_JSON_VALUE)
+		public List<String> getAllVehicleNames()
 		{
-			return vehicleService.getVehicleBySeatingCapacity(seatingCapacity);
-		}*/
+			return vehicleService.getAllVehicleNames();
+		}
+
+	//-------------------Get All Vehicle No-----------------------------------------------
+		@ApiOperation(value="Returns all the vehicle Nos")
+		@ApiResponses(value= {
+				@ApiResponse(code=200, message="Vehicles found with fare"),
+				@ApiResponse(code=404, message="No such vehicles found")
+		})
+		@GetMapping(value="/vehicle/filterNo", produces=MediaType.APPLICATION_JSON_VALUE)
+		public List<String> getAllVehicleNos()
+		{
+			return vehicleService.getAllVehicleNos();
+		}
 		
 }

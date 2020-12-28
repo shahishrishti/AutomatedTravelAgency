@@ -47,4 +47,9 @@ public class PlaceServiceImpl implements PlaceService{
 		return true;
 	}
 
+	@Override
+	public List<String> getAllPlaceNames() {
+		return placeRepo.getAllPlaceNames();
+	}
+
 }
