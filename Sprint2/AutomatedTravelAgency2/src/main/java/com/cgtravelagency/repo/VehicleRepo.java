@@ -13,7 +13,6 @@ public interface VehicleRepo extends JpaRepository<VehicleEntity, String> {
 
 	public List<VehicleEntity> findByFare(double fare);
 
-	//public List<VehicleTypeEntity> findBySeatingCapacity(int seatingCapacity);
 	
 	
 }

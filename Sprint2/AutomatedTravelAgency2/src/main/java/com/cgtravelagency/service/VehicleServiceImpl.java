@@ -90,13 +90,4 @@ public class VehicleServiceImpl implements VehicleService {
 		return VehicleUtil.convertVehicleEntityListIntoVehicleList(vehicleRepo.findByFare(fare));
 	}
 	
-     //-----------------------------View Vehicle By Seating Capacity------------------------------
-	/*@Override
-	public List<Vehicle> getVehicleBySeatingCapacity(int seatingCapacity) throws VehicleNotFoundException {
-		return VehicleUtil.convertVehicleEntityListIntoVehicleList(vehicleRepo.findBySeatingCapacity(seatingCapacity));
-
-	}*/
-
-	
-
 }
