@@ -1,9 +1,14 @@
 package com.cgtravelagency.json;
 
+<<<<<<< HEAD
+import com.cgtravelagency.entity.RouteEntity;
+import com.cgtravelagency.entity.VehicleTypeEntity;
+=======
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+>>>>>>> branch 'master' of https://github.com/shahishrishti/AutomatedTravelAgency.git
 
 public class Vehicle {
 	
@@ -50,6 +55,11 @@ public class Vehicle {
 		this.fare = fare;
 		this.vehicleType = vehicleType;
 		this.route = route;
+	}
+
+	public Vehicle(String vehicleNo2, String vehicleName2, double fare2, VehicleTypeEntity vehicleType2,
+			RouteEntity route2) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getVehicleNo() {

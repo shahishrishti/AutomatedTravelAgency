@@ -2,10 +2,17 @@ package com.cgtravelagency.repo;
 
 import java.util.List;
 
-import com.cgtravelagency.json.Driver;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DriverRepo {
+import com.cgtravelagency.entity.DriverEntity;
 
-	//public List<Driver> findByDriverName(String drivername);
+
+public interface DriverRepo extends JpaRepository<DriverEntity, Long> {
+
+	public List<DriverEntity> findByDriverName(String drivername);
+
+	
+	public List<DriverEntity> findByLicenseNo(String licenseNo);
 
 }
+

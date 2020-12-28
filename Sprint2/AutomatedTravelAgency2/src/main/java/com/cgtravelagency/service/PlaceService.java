@@ -10,5 +10,6 @@ public interface PlaceService {
 	public List<Place> getAllPlaces();
 	public Place updatePlace(Long placeId, Place place);
 	public boolean deleteById(Long placeId);
+	public List<String> getAllPlaceNames();
 	
 }

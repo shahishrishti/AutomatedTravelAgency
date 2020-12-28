@@ -10,8 +10,10 @@ import com.cgtravelagency.json.Vehicle;
 
 public interface VehicleService {
 
-	public Vehicle updateVehicle(String vehicleNo, Vehicle vehicle) throws InvalidVehicleDataException;
-	public boolean deleteVehicle(String vehicleNo) throws InvalidVehicleDataException;
+	public Vehicle updateVehicle(String vehicleNo, Vehicle vehicle) throws VehicleNotFoundException;
+	
+	public Vehicle deleteVehicle(String vehicleNo) throws VehicleNotFoundException;
+	
 	public List<Vehicle> getAllVehicles();
 
 	public List<Vehicle> getVehicleByName(String vehicleName) throws VehicleNotFoundException;
@@ -20,8 +22,10 @@ public interface VehicleService {
 
 	public List<Vehicle> getVehicleByFare(double fare) throws VehicleNotFoundException;
 	
-	//public List<Vehicle> getVehicleBySeatingCapacity(int seatingCapacity)  throws VehicleNotFoundException;
-	
 	public Vehicle createNewVehicle(@Valid Vehicle vehicle) throws InvalidVehicleDataException;
+	
+	public List<String> getAllVehicleNames();
+	
+	public List<String> getAllVehicleNos();
 	
 } 

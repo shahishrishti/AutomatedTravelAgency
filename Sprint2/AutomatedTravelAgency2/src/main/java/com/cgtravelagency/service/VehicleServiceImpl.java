@@ -3,13 +3,12 @@ package com.cgtravelagency.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cgtravelagency.entity.VehicleEntity;
-import com.cgtravelagency.exception.InvalidVehicleDataException;
 import com.cgtravelagency.exception.VehicleNotFoundException;
 import com.cgtravelagency.json.Vehicle;
 import com.cgtravelagency.repo.VehicleRepo;
@@ -21,9 +20,12 @@ public class VehicleServiceImpl implements VehicleService {
 
 	@Autowired
 	private VehicleRepo vehicleRepo;
+	private Logger logger = LogManager.getLogger(VehicleServiceImpl.class.getName());
+	//------------------------------Update Vehicle---------------------------------------------------------
 	
 	@Override
-	public Vehicle updateVehicle(String vehicleNo, Vehicle vehicle) throws InvalidVehicleDataException {
+	public Vehicle updateVehicle(String vehicleNo, Vehicle vehicle) throws VehicleNotFoundException {
+		logger.info("Update Vehicle from service");
 		Optional<VehicleEntity> opVehicleEntity = vehicleRepo.findById(vehicleNo);
 		if(opVehicleEntity.isPresent()) {
 			VehicleEntity vehicleEntity = opVehicleEntity.get();
@@ -33,21 +35,33 @@ public class VehicleServiceImpl implements VehicleService {
 			vehicleEntity = vehicleRepo.save(vehicleEntity);
 			return VehicleUtil.convertVehicleEntityIntoVehicle(vehicleEntity);
 		} else {
-			return null;
+			logger.error("Vehicle No Not Found");
+			throw new VehicleNotFoundException("Vehicle No not found");
 		}
 	}
 
+	//-----------------------------Delete Vehicle------------------------------------------------------
 	@Override
-	public boolean deleteVehicle(String vehicleNo) throws InvalidVehicleDataException {
-		vehicleRepo.deleteById(vehicleNo);
-		return true;
+	public Vehicle deleteVehicle(String vehicleNo) throws VehicleNotFoundException {
+		logger.info("Delete Vehicle from service");
+		Optional<VehicleEntity> opVehicleEntity = vehicleRepo.findById(vehicleNo);
+		if(opVehicleEntity.isPresent()) {
+			VehicleEntity vehicleEntity = opVehicleEntity.get();
+			vehicleRepo.deleteById(vehicleNo);
+			return VehicleUtil.convertVehicleEntityIntoVehicle(vehicleEntity);
+		} else {
+			logger.error("Vehicle No not found");
+			throw new VehicleNotFoundException("Vehicle No not found");
+		}
 	}
+	
 	//---------------------------------Add New Vehicle----------------------------------------
 	@Override
 	public Vehicle createNewVehicle(Vehicle vehicle) {
 		VehicleEntity vehicleEntity = vehicleRepo.save(VehicleUtil.convertVehicleIntoVehicleEntity(vehicle));
 		return VehicleUtil.convertVehicleEntityIntoVehicle(vehicleEntity);
 	}
+	
 	//--------------------------------View All Vehicles---------------------------------------
 	@Override
 	public List<Vehicle> getAllVehicles() {
@@ -61,7 +75,6 @@ public class VehicleServiceImpl implements VehicleService {
 			return VehicleUtil.convertVehicleEntityListIntoVehicleList(vehicleRepo.findByVehicleName(vehicleName));
 	}
 		
-	
 	//-------------------------------View Vehicle By Vehicle No-------------------------------
 
 	@Override
@@ -83,14 +96,17 @@ public class VehicleServiceImpl implements VehicleService {
 
 		return VehicleUtil.convertVehicleEntityListIntoVehicleList(vehicleRepo.findByFare(fare));
 	}
+
+	//---------------------------------View All Vehicle Names--------------------------------------
+	@Override
+	public List<String> getAllVehicleNames() {
+		return vehicleRepo.getAllVehicleNames();
+	}
+
+	//--------------------------------View All Vehicle No-----------------------------------------
+	@Override
+	public List<String> getAllVehicleNos() {
+		return vehicleRepo.getAllVehicleNos();
+	}
 	
-     //-----------------------------View Vehicle By Seating Capacity------------------------------
-	/*@Override
-	public List<Vehicle> getVehicleBySeatingCapacity(int seatingCapacity) throws VehicleNotFoundException {
-		return VehicleUtil.convertVehicleEntityListIntoVehicleList(vehicleRepo.findBySeatingCapacity(seatingCapacity));
-
-	}*/
-
-	
-
 }
