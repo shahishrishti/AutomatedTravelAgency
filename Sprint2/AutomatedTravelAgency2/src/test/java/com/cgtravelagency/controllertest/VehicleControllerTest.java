@@ -136,6 +136,8 @@ class VehicleControllerTest {
 		});
 		logger.info("[END] Test to view vehicle with Blank Fare value");
 	}
+	
+	
 }
 	
 	
