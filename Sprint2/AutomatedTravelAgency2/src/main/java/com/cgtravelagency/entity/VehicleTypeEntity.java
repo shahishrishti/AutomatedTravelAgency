@@ -26,8 +26,8 @@ public class VehicleTypeEntity {
 	@Column(name = "seatingcapacity")
 	private int seatingCapacity;
 
-	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, 
-			fetch=FetchType.LAZY, mappedBy = "vehicleType")
+	@OneToMany(cascade={CascadeType.ALL}, 
+			fetch=FetchType.EAGER, mappedBy = "vehicleType")
 	private Set<VehicleEntity> vehicles;
 	
 	public VehicleTypeEntity() {

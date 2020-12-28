@@ -14,7 +14,7 @@ import com.cgtravelagency.json.Route;
 import com.cgtravelagency.json.VehicleType;
 
 @Entity
-@Table(name = "vehicle")
+@Table(name = "vehicle", schema="public")
 public class VehicleEntity {
 
 	@Id
@@ -27,12 +27,12 @@ public class VehicleEntity {
 	@Column(name = "fare")
 	private double fare;
 	
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE}, fetch=FetchType.EAGER)
 	@JoinColumn(name="typeid")
 	private VehicleTypeEntity vehicleType;
 	
-	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
-			fetch=FetchType.EAGER)
+	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE},
+			fetch=FetchType.LAZY)
 	@JoinColumn(name="routeid")
 	private RouteEntity route;
 	

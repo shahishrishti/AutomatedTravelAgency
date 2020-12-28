@@ -48,4 +48,9 @@ public class VehicleTypeServiceImpl implements VehicleTypeService{
 		return true;
 	}
 
+	@Override
+	public List<String> getAllVehicleTypeNames() {
+		return vehicleTypeRepo.getAllVehicleTypeNames();
+	}
+
 }

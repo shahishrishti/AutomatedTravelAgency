@@ -1,33 +1,42 @@
 package com.cgtravelagency.json;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import io.swagger.annotations.ApiModelProperty;
 
 public class Driver {
+
 	
-	
-	@Min(value=1)
+
+	@Min(value = 1)
+	@ApiModelProperty(value=" Driver Id")
 	private Long driverId;
 	
-	@NotNull
 	@NotBlank
+	@NotNull
+	@ApiModelProperty(value=" Driver Name")
 	private String driverName;
-	
-	@NotNull
+
 	@NotBlank
+	@NotNull
+	@ApiModelProperty(value=" Driver Address")
 	private String address;
 	
-	@Max(value=10,message="Mobile number should be 10 digits")
+	@Pattern(regexp="^[789]\\{9}$", message = "Contact Number should be of a valid format")
+	@ApiModelProperty(value=" Driver ContactNo")
 	private Long contact;
+	
 	
 	@NotNull
 	@NotBlank 
+	@Pattern(regexp="^[A-Z]{2}\\s[0-9]{13}$", message = "License Number should be of a valid format")
+	@ApiModelProperty(value=" Driver LicenseNo")
 	private String licenseNo;
 	
-	@NotNull
-	@NotBlank
+	@ApiModelProperty(value=" Driver Vehicle")
 	private Vehicle vehicle;
 	
 	public Driver() {
@@ -103,85 +112,60 @@ public class Driver {
 		this.contact = contact;
 		this.vehicle = vehicle;
 	}
+	
+	public Long getDriverId() {
+		return driverId;
+	}
 
+	public void setDriverId(Long driverId) {
+		this.driverId = driverId;
+	}
+
+	public String getDriverName() {
+		return driverName;
+	}
+
+	public void setDriverName(String driverName) {
+		this.driverName = driverName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Long getContact() {
+		return contact;
+	}
+
+	public void setContact(Long contact) {
+		this.contact = contact;
+	}
+	
+	public String getLicenseNo() {
+		return licenseNo;
+	}
+
+	public void setLicenseNo(String licenseNo) {
+		this.licenseNo = licenseNo;
+	}
+
+	public Vehicle getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
+	}
 
 
 	@Override
 	public String toString() {
 		return "Driver [driverId=" + driverId + ", driverName=" + driverName + ", address=" + address + ", contact="
 				+ contact + ", licenseNo=" + licenseNo + ", vehicle=" + vehicle + "]";
-	}
-
-
-
-	public Long getDriverId() {
-		return driverId;
-	}
-
-
-
-	public void setDriverId(Long driverId) {
-		this.driverId = driverId;
-	}
-
-
-
-	public String getDriverName() {
-		return driverName;
-	}
-
-
-
-	public void setDriverName(String driverName) {
-		this.driverName = driverName;
-	}
-
-
-
-	public String getAddress() {
-		return address;
-	}
-
-
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-
-
-	public Long getContact() {
-		return contact;
-	}
-
-
-
-	public void setContact(Long contact) {
-		this.contact = contact;
-	}
-
-
-
-	public String getLicenseNo() {
-		return licenseNo;
-	}
-
-
-
-	public void setLicenseNo(String licenseNo) {
-		this.licenseNo = licenseNo;
-	}
-
-
-
-	public Vehicle getVehicle() {
-		return vehicle;
-	}
-
-
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
 	}
 
 

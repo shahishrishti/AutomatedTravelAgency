@@ -72,4 +72,14 @@ public class PlaceController {
 	public boolean deletePlaceById(@PathVariable Long placeId) {
 		return placeService.deleteById(placeId);
 	}
+	
+	@ApiOperation(value="Get All Place Names")
+	@ApiResponses(value= {
+			@ApiResponse(code=201, message="New Place created"),
+			@ApiResponse(code=404, message="No such Place found")
+	})
+	@DeleteMapping(value="/place/filter", produces=MediaType.APPLICATION_JSON_VALUE) 
+	public List<String> getAllPlaceNames() {
+		return placeService.getAllPlaceNames();
+	}
 }

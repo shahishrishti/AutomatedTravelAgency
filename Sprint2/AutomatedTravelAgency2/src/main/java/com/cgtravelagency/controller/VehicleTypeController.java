@@ -74,4 +74,14 @@ public class VehicleTypeController {
 	public boolean deleteVehicleTypeById(@PathVariable Long typeId) {
 		return vehicleTypeService.deleteById(typeId);
 	}
+	
+	@ApiOperation(value="View all vehicleType Name")
+	@ApiResponses(value= {
+			@ApiResponse(code=201, message="New vehicleType created"),
+			@ApiResponse(code=404, message="No such vehicleType found")
+	})
+	@GetMapping(value="/vehicleType/filter", produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<String> getAllVehicleTypeNames() {
+		return vehicleTypeService.getAllVehicleTypeNames();
+	}
 }

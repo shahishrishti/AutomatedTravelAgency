@@ -3,28 +3,23 @@ package com.cgtravelagency.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cgtravelagency.entity.DriverEntity;
-import com.cgtravelagency.json.Driver;
 
+import com.cgtravelagency.entity.DriverEntity;
 import com.cgtravelagency.entity.VehicleEntity;
-import com.cgtravelagency.json.Vehicle;   
+import com.cgtravelagency.json.Driver;
+import com.cgtravelagency.json.Vehicle;
 
 
 public class DriverUtil {
 	
-	
-
-
 	public static Driver convertDriverEntityIntoDriver(DriverEntity driverEntity) {
-		VehicleEntity vehicleEntity = driverEntity.getVehicle();
-		Vehicle vehicle = new Vehicle(vehicleEntity.getVehicleName(), vehicleEntity.getFare(), VehicleTypeUtil.convertVehicleTypeEntityIntoVehicleType(vehicleEntity.getVehicleType()));
-		return new Driver(driverEntity.getDriverId(), driverEntity.getDriverName(), driverEntity.getAddress(), driverEntity.getContact(), driverEntity.getLicenseNo(), vehicle);
+		return new Driver(driverEntity.getDriverId(), driverEntity.getDriverName(), driverEntity.getAddress(), driverEntity.getContact(), 
+				driverEntity.getLicenseNo(), VehicleUtil.convertVehicleEntityIntoVehicle(driverEntity.getVehicle()));
 	}
 
 	public static DriverEntity convertDriverIntoDriverEntity(Driver driver) {
-		Vehicle vehicle = driver.getVehicle();
-		VehicleEntity vehicleEntity = new VehicleEntity(vehicle.getVehicleName(), vehicle.getFare(),  VehicleTypeUtil.convertVehicleTypeIntoVehicleTypeEntity(vehicle.getVehicleType()));
-		return new DriverEntity(driver.getDriverId(), driver.getDriverName(), driver.getAddress(), driver.getLicenseNo(),driver.getContact(), vehicleEntity);
+		return new DriverEntity(driver.getDriverId(), driver.getDriverName(), driver.getAddress(),
+				driver.getLicenseNo(),driver.getContact(), VehicleUtil.convertVehicleIntoVehicleEntity(driver.getVehicle()));
 	}
 
 	public static List<Driver> convertDriverEntityListIntoDriverList(List<DriverEntity> driverEntityList) {
@@ -34,4 +29,5 @@ public class DriverUtil {
 		}
 		return drivers;
 	}  
+	
 }
