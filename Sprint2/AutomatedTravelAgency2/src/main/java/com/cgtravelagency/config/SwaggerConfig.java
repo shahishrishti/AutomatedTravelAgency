@@ -30,7 +30,7 @@ public class SwaggerConfig {
 				"The documentation contains information about automated travel agency project",
 				"1.0.0",
 				"public terms of service",
-				new Contact("Shrishti Shahi", "http://shrishti.com", "shahishrishti@gmail.com"),
+				new Contact("Tanurkar Sakshi", "http://sakshi.com", "sakshi.tanurkar@gmail.com"),
 				"GPL",
 				"http://gpl.info");
 		return apiInfo;

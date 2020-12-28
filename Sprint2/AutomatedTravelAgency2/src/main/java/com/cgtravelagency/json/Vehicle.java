@@ -1,5 +1,8 @@
 package com.cgtravelagency.json;
 
+import com.cgtravelagency.entity.RouteEntity;
+import com.cgtravelagency.entity.VehicleTypeEntity;
+
 public class Vehicle {
 	
 	private String vehicleNo;
@@ -34,6 +37,11 @@ public class Vehicle {
 		this.fare = fare;
 		this.vehicleType = vehicleType;
 		this.route = route;
+	}
+
+	public Vehicle(String vehicleNo2, String vehicleName2, double fare2, VehicleTypeEntity vehicleType2,
+			RouteEntity route2) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getVehicleNo() {

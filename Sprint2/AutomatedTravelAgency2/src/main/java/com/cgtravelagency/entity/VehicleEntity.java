@@ -10,6 +10,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.cgtravelagency.json.Route;
+import com.cgtravelagency.json.VehicleType;
+
 @Entity
 @Table(name = "vehicle")
 public class VehicleEntity {
@@ -68,6 +71,10 @@ public class VehicleEntity {
 		this.fare = fare;
 		this.vehicleType = vehicleType;
 		this.route = route;
+	}
+
+	public VehicleEntity(String vehicleNo2, String vehicleName2, double fare2, VehicleType vehicleType2, Route route2) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getVehicleNo() {
