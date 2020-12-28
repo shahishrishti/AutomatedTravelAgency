@@ -3,11 +3,12 @@ package com.cgtravelagency.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cgtravelagency.entity.VehicleEntity;
-import com.cgtravelagency.exception.InvalidVehicleDataException;
 import com.cgtravelagency.exception.VehicleNotFoundException;
 import com.cgtravelagency.json.Vehicle;
 import com.cgtravelagency.repo.VehicleRepo;
@@ -19,11 +20,12 @@ public class VehicleServiceImpl implements VehicleService {
 
 	@Autowired
 	private VehicleRepo vehicleRepo;
-	
+	private Logger logger = LogManager.getLogger(VehicleServiceImpl.class.getName());
 	//------------------------------Update Vehicle---------------------------------------------------------
 	
 	@Override
-	public Vehicle updateVehicle(String vehicleNo, Vehicle vehicle) throws InvalidVehicleDataException {
+	public Vehicle updateVehicle(String vehicleNo, Vehicle vehicle) throws VehicleNotFoundException {
+		logger.info("Update Vehicle from service");
 		Optional<VehicleEntity> opVehicleEntity = vehicleRepo.findById(vehicleNo);
 		if(opVehicleEntity.isPresent()) {
 			VehicleEntity vehicleEntity = opVehicleEntity.get();
@@ -33,20 +35,23 @@ public class VehicleServiceImpl implements VehicleService {
 			vehicleEntity = vehicleRepo.save(vehicleEntity);
 			return VehicleUtil.convertVehicleEntityIntoVehicle(vehicleEntity);
 		} else {
-			throw new InvalidVehicleDataException("Vehicle No not found");
+			logger.error("Vehicle No Not Found");
+			throw new VehicleNotFoundException("Vehicle No not found");
 		}
 	}
 
 	//-----------------------------Delete Vehicle------------------------------------------------------
 	@Override
-	public Vehicle deleteVehicle(String vehicleNo) throws InvalidVehicleDataException {
+	public Vehicle deleteVehicle(String vehicleNo) throws VehicleNotFoundException {
+		logger.info("Delete Vehicle from service");
 		Optional<VehicleEntity> opVehicleEntity = vehicleRepo.findById(vehicleNo);
 		if(opVehicleEntity.isPresent()) {
 			VehicleEntity vehicleEntity = opVehicleEntity.get();
 			vehicleRepo.deleteById(vehicleNo);
 			return VehicleUtil.convertVehicleEntityIntoVehicle(vehicleEntity);
 		} else {
-			throw new InvalidVehicleDataException("Vehicle No not found");
+			logger.error("Vehicle No not found");
+			throw new VehicleNotFoundException("Vehicle No not found");
 		}
 	}
 	

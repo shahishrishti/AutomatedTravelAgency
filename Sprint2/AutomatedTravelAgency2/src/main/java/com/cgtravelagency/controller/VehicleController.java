@@ -50,8 +50,8 @@ public class VehicleController {
 				@ApiResponse(code=404, message="No such vehicleType found")
 		})
 		@PutMapping(value = "/vehicle/{vehicleNo}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-		public Vehicle updateVehicle(@PathVariable String vehicleNo, @Valid @RequestBody Vehicle vehicle) throws InvalidVehicleDataException {
-			logger.info("Update Vehicle Called!!");
+		public Vehicle updateVehicle(@PathVariable String vehicleNo, @Valid @RequestBody Vehicle vehicle) throws VehicleNotFoundException {
+			logger.info("Update Vehicle Called from controller!!");
 			return vehicleService.updateVehicle(vehicleNo, vehicle);
 		}
 	
@@ -63,12 +63,13 @@ public class VehicleController {
 				@ApiResponse(code=404, message="No such vehicleType found")
 		})
 		@DeleteMapping(value = "/vehicle/{vehicleNo}", produces = MediaType.APPLICATION_JSON_VALUE)
-		public Vehicle deleteVehicle(@PathVariable String vehicleNo) throws InvalidVehicleDataException {
-			logger.info("Delete Vehicle Called!!");
+		public Vehicle deleteVehicle(@PathVariable String vehicleNo) throws VehicleNotFoundException {
+			logger.info("Delete Vehicle Called from controller!!");
 			return vehicleService.deleteVehicle(vehicleNo);
 		}
 	
 	//-------------------------Add vehicle--------------------------------------------
+		
 		@ApiOperation(value="Add New Vehicle")
 		@ApiResponses(value= {
 				@ApiResponse(code=201, message="New vehicle added")
@@ -76,7 +77,7 @@ public class VehicleController {
 		})
 		@PostMapping(value="/vehicle/add", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 		public ResponseEntity<Vehicle> createNewEmployee(@Valid @RequestBody Vehicle vehicle) throws InvalidVehicleDataException {
-			logger.info("Add Vehicle Called!!");
+			logger.info("Add Vehicle Called from controller!!");
 			return new ResponseEntity<Vehicle>(vehicleService.createNewVehicle(vehicle), HttpStatus.OK);
 		}
 	

@@ -10,9 +10,9 @@ import com.cgtravelagency.json.Vehicle;
 
 public interface VehicleService {
 
-	public Vehicle updateVehicle(String vehicleNo, Vehicle vehicle) throws InvalidVehicleDataException;
+	public Vehicle updateVehicle(String vehicleNo, Vehicle vehicle) throws VehicleNotFoundException;
 	
-	public Vehicle deleteVehicle(String vehicleNo) throws InvalidVehicleDataException;
+	public Vehicle deleteVehicle(String vehicleNo) throws VehicleNotFoundException;
 	
 	public List<Vehicle> getAllVehicles();
 
