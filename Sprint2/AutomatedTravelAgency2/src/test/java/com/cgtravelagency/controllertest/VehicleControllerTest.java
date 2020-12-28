@@ -86,13 +86,34 @@ class VehicleControllerTest {
 	@Test
 	void testModifyByInvalidVehicleNo() {
 		
-		logger.info("[START] Test to Delete by Blank Vehicle No");
+		logger.info("[START] Test to Modify by Invalid Vehicle No");
 		Vehicle vehicle = new Vehicle("MH 01 AB 8192", "Swift", 90, new VehicleType(1l, "Car", 4), null);
 		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
 			restTemplate.put("http://localhost:9090/cgata/vehicle/MH###", vehicle, Vehicle.class);
 		});
-		logger.info("[END] Test to Delete by Blank Vehicle No");
+		logger.info("[END] Test to Modify by Invalid Vehicle No");
 		
+	}
+	
+	@Test
+	void testModifyByBlankVehicleName() {
+		logger.info("[START] Test to Modify by Blank Vehicle Name");
+		Vehicle vehicle = new Vehicle("MH 01 AB 8192", "", 90, new VehicleType(1l, "Car", 4), null);
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
+			restTemplate.put("http://localhost:9090/cgata/vehicle/MH 01 AB 1234", vehicle, Vehicle.class);
+		});
+		logger.info("[END] Test to Modify by Blank Vehicle Name");
+	}
+	
+	@Test
+	void testModifyByInvalidVehicleName() {
+		logger.info("[START] Test to Modify by Null Vehicle Name");
+		Vehicle vehicle = new Vehicle("MH 01 AB 8192", null, 90, new VehicleType(1l, "Car", 4), null);
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
+			restTemplate.put("http://localhost:9090/cgata/vehicle/MH 01 AB 1234", vehicle, Vehicle.class);
+		});
+		logger.info(exception);
+		logger.info("[END] Test to Modify by Null Vehicle Name");
 	}
 	
 	@Test

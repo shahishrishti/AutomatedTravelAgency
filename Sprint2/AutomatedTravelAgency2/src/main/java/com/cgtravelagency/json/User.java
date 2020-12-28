@@ -53,6 +53,11 @@ public class User {
 		this.bookings = bookings;
 	}
 
+	public User(Long userId2, String name2, String email2, String address2, Long contact2, String password2,
+			String gender2, Date dob2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getUserId() {
 		return userId;
 	}
