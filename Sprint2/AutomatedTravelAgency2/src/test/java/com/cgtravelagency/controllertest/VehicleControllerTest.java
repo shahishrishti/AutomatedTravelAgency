@@ -1,5 +1,6 @@
 package com.cgtravelagency.controllertest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -131,6 +132,28 @@ class VehicleControllerTest {
 		logger.info("[END] Test to Modify by Valid Vehicle Name");
 		
 	}
+	
+	@Test
+	void testModifyByNullVehicleType() {
+		logger.info("[START] Test to Modify by Null Vehicle Type");
+		VehicleType vehicleType = null;
+		Vehicle vehicle = new Vehicle("MP 01 AF 8192", "Swift", 90, vehicleType, null);
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
+			restTemplate.put("http://localhost:9090/cgata/vehicle/MP 01 AF 8192", vehicle, Vehicle.class);
+		});
+		logger.info(exception);
+		logger.info("[END] Test to Modify by Null Vehicle Type");
+	}
+	
+	@Test
+	void testModifyByValidVehicleType() {
+		
+		logger.info("[START] Test to Modify by Valid Vehicle Type");
+		Vehicle vehicle = new Vehicle("MP 01 AF 8192", "Swift", 90, new VehicleType(1l, "Car", 4), null);
+		restTemplate.put("http://localhost:9090/cgata/vehicle/MP 01 AF 8192", vehicle, Vehicle.class);
+		logger.info("[END] Test to Modify by Valid Vehicle Type");
+		
+	}
 		
 	@Test
 	void testAddVehicleWithValidVehicleNo()
@@ -141,17 +164,30 @@ class VehicleControllerTest {
 		logger.info("[END] Test to Add Vehicle with  Valid Vehicle No");
    }
 	
-	/*@Test()
+	
+	@Test
 	void testAddBVehicleWithBlankVehicleNo() {
 		
 		logger.info("[START] Test to Add vehicle with blank Vehicle No");
-		Exception exception = assertThrows(NullPointerException.class, () -> {
-			vehicleController.deleteVehicle("");
+		Vehicle vehicle = new Vehicle("","Nissan", 500, new VehicleType(1l, "Car", 4), new Route(1l, "Mumbai","Pune",250));
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () ->{
+		restTemplate.postForObject("http://localhost:9090/cgata/vehicle/add", vehicle, Vehicle.class);
 		});
-		logger.info("[END] Test to Add vehicle with Blank Vehicle No");
+        logger.info("[END] Test to Add vehicle with Blank Vehicle No");
 		
 	}
-	}*/
+	
+	@Test()
+	void testAddBVehicleWithInvalidVehicleNo() {
+		
+		logger.info("[START] Test to Add vehicle with Invalid Vehicle No");
+		Vehicle vehicle = new Vehicle("MH@@@@","Nissan", 500, new VehicleType(1l, "Car", 4), new Route(1l, "Mumbai","Pune",250));
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () ->{
+		restTemplate.postForObject("http://localhost:9090/cgata/vehicle/add", vehicle, Vehicle.class);
+		});
+        logger.info("[END] Test to Add vehicle with Invalid Vehicle No");
+		
+	}
 	
 	@Test
 	void testAddVehicleWithValidVehicleName()
@@ -160,6 +196,29 @@ class VehicleControllerTest {
 		Vehicle vehicle = new Vehicle("MH 01 AS 3456","Jeep", 250, new VehicleType(2l, "Car", 4), new Route(2l, "Mumbai","Pune",250));
 		restTemplate.postForObject("http://localhost:9090/cgata/vehicle/add", vehicle, Vehicle.class);
 		logger.info("[END] Test to Add Vehicle with  Valid Vehicle Name");
+	}
+	
+	@Test
+	void testAddBVehicleWithBlankVehicleName() {
+		
+		logger.info("[START] Test to Add vehicle with blank Vehicle Name");
+		Vehicle vehicle = new Vehicle("MH 01 AS 3456","", 500, new VehicleType(1l, "Car", 4), new Route(1l, "Mumbai","Pune",250));
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () ->{
+		restTemplate.postForObject("http://localhost:9090/cgata/vehicle/add", vehicle, Vehicle.class);
+		});
+        logger.info("[END] Test to Add vehicle with Blank Vehicle Name");
+		
+	}
+	
+	@Test
+	public void testGetAllVehicle()
+	{
+		logger.info("[START] Test to check all the vehicle fetched successfully!!");
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:9090/cgata/vehicle", String.class);
+		assertEquals(200, response.getStatusCodeValue());
+		logger.info("[END] Test to check all the vehicle fetched successfully!!");
+
 	}
 	
 	@Test
@@ -175,10 +234,20 @@ class VehicleControllerTest {
 	void testViewVehicleByBlankVehicleNo()
 	{
 		logger.info("[START] Test to view vehicle with Blank vehicle No.");
-		Exception exception = assertThrows(NullPointerException.class, () -> {
-			vehicleController.getVehicleByNo("");
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () ->{
+			restTemplate.getForObject("http://localhost:9090/cgata/vehicle/filters/\"\"", Vehicle.class);
 		});
 		logger.info("[END] Test to view vehicle with Blank  Vehicle No");
+	}
+	
+	@Test
+	void testViewVehicleByInvalidVehicleNo()
+	{
+		logger.info("[START] Test to view vehicle with Invalid vehicle No.");
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () ->{
+			restTemplate.getForObject("http://localhost:9090/cgata/vehicle/filters/MH XX AH 1234", Vehicle.class);
+		});
+		logger.info("[END] Test to view vehicle with Invalid  Vehicle No");
 	}
 	
 	@Test
@@ -188,18 +257,6 @@ class VehicleControllerTest {
 		ResponseEntity<Vehicle[]> responseEntity = restTemplate.getForEntity("http://localhost:9090/cgata/vehicle/filter/Swift", Vehicle[].class);
 		assertNotNull(responseEntity);
 		logger.info("[END] Test to view vehicle with Valid Vehicle Name");
-	}
-		
-	
-	
-	@Test
-	void testViewVehicleByBlankVehicleName()
-	{
-		logger.info("[START] Test to view vehicle with Blank vehicle No.");
-		Exception exception = assertThrows(NullPointerException.class, () -> {
-			vehicleController.getVehicleByName("");
-		});
-		logger.info("[END] Test to view vehicle with Blank  Vehicle Name");
 	}
 	
 	@Test
@@ -215,11 +272,12 @@ class VehicleControllerTest {
 	void testViewVehicleByBlankFare()
 	{
 		logger.info("[START] Test to view vehicle with Blank Fare value");
-		Exception exception = assertThrows(NullPointerException.class, () -> {
-			vehicleController.getVehicleByFare(0);
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () ->{
+			restTemplate.getForEntity("http://localhost:9090/cgata/vehicle/filtering/\"\"", Vehicle.class);
 		});
 		logger.info("[END] Test to view vehicle with Blank Fare value");
 	}
+
 	
 	
 }
