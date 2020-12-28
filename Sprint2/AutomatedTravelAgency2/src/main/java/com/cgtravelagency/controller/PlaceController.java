@@ -33,6 +33,7 @@ public class PlaceController {
 	@Autowired
 	private PlaceService placeService;
 	
+	//------------------------
 	@ApiOperation(value="Returns all the places")
 	@ApiResponses(value= {
 			@ApiResponse(code=201, message="New Place created"),

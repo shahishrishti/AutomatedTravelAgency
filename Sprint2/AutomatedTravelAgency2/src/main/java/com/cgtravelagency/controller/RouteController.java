@@ -103,7 +103,7 @@ public class RouteController {
 			
 	})
 	@GetMapping(value="/route/{source}/{destination}/filters",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Route> getRouteBySourceAndDistination(@PathVariable String source, @PathVariable String destination) throws InvalidRouteDataException {
+	public List<Route> getRouteBySourceAndDestination(@PathVariable String source, @PathVariable String destination) throws InvalidRouteDataException {
 	    return routeService.getRouteBySourceAndDestination(source, destination);
 	}
 	
