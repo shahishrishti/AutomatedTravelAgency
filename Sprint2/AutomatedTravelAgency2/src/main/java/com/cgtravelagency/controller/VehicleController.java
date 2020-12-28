@@ -59,7 +59,7 @@ public class VehicleController {
 				@ApiResponse(code=404, message="No such vehicleType found")
 		})
 		@DeleteMapping(value = "/vehicle/{vehicleNo}", produces = MediaType.APPLICATION_JSON_VALUE)
-		public boolean deleteVehicle(@PathVariable String vehicleNo) throws InvalidVehicleDataException {
+		public Vehicle deleteVehicle(@PathVariable String vehicleNo) throws InvalidVehicleDataException {
 			logger.info("Delete Vehicle Called!!");
 			return vehicleService.deleteVehicle(vehicleNo);
 		}

@@ -1,5 +1,9 @@
 package com.cgtravelagency.repo;
 
-public interface DriverRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cgtravelagency.entity.DriverEntity;
+
+public interface DriverRepo extends JpaRepository<DriverEntity, Long> {
 
 }

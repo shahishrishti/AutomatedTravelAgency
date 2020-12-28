@@ -31,7 +31,7 @@ public class DriverEntity {
 	@Column(name = "contact")
 	private Long contact;
 	
-	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
+	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE},
 			fetch=FetchType.EAGER)
 	@JoinColumn(name="vehicleno")
 	private VehicleEntity vehicle;

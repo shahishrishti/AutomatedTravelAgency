@@ -31,14 +31,20 @@ public class VehicleServiceImpl implements VehicleService {
 			vehicleEntity = vehicleRepo.save(vehicleEntity);
 			return VehicleUtil.convertVehicleEntityIntoVehicle(vehicleEntity);
 		} else {
-			return null;
+			throw new InvalidVehicleDataException("Vehicle No not found");
 		}
 	}
 
 	@Override
-	public boolean deleteVehicle(String vehicleNo) throws InvalidVehicleDataException {
-		vehicleRepo.deleteById(vehicleNo);
-		return true;
+	public Vehicle deleteVehicle(String vehicleNo) throws InvalidVehicleDataException {
+		Optional<VehicleEntity> opVehicleEntity = vehicleRepo.findById(vehicleNo);
+		if(opVehicleEntity.isPresent()) {
+			VehicleEntity vehicleEntity = opVehicleEntity.get();
+			vehicleRepo.deleteById(vehicleNo);
+			return VehicleUtil.convertVehicleEntityIntoVehicle(vehicleEntity);
+		} else {
+			throw new InvalidVehicleDataException("Vehicle No not found");
+		}
 	}
 	
 	@Override
