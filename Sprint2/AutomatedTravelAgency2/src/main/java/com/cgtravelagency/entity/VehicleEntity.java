@@ -24,7 +24,7 @@ public class VehicleEntity {
 	@Column(name = "fare")
 	private double fare;
 	
-	@ManyToOne(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE}, fetch=FetchType.EAGER)
 	@JoinColumn(name="typeid")
 	private VehicleTypeEntity vehicleType;
 	
