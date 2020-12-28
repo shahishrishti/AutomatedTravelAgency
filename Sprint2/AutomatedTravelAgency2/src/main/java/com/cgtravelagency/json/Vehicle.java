@@ -1,12 +1,13 @@
 package com.cgtravelagency.json;
 
-import com.cgtravelagency.entity.RouteEntity;
-import com.cgtravelagency.entity.VehicleTypeEntity;
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+
+import com.cgtravelagency.entity.RouteEntity;
+import com.cgtravelagency.entity.VehicleTypeEntity;
+
 
 
 public class Vehicle {

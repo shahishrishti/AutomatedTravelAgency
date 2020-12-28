@@ -1,6 +1,7 @@
 package com.cgtravelagency.exception;
 
 public class InvalidDriverDataException extends Exception {
+
 	private String message;
 	
 	public InvalidDriverDataException() {
@@ -13,6 +14,7 @@ public class InvalidDriverDataException extends Exception {
 	public String toString() {
 		return "Driver not found " + this.message;
      }
+
 	
 	@Override
 	public String getLocalizedMessage() {
