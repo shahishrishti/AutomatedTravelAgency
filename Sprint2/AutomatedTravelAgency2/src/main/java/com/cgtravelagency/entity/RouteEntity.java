@@ -31,7 +31,7 @@ public class RouteEntity {
 	@Column(name = "distance")
 	private double distance;
 	
-	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, 
+	@OneToMany(cascade={CascadeType.PERSIST}, 
 			fetch=FetchType.LAZY, mappedBy = "route")
 	private Set<BookingEntity> booking;
 	
