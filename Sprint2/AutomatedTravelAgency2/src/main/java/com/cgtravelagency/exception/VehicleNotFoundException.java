@@ -14,4 +14,8 @@ private String message;
 		return "Vehicle not found " + this.message;
 	}
 
+	@Override
+	public String getLocalizedMessage() {
+		return this.message;
+	}
 }

@@ -52,7 +52,7 @@ public class VehicleServiceImpl implements VehicleService {
 		} else {
 			logger.error("Vehicle No not found");
 			throw new VehicleNotFoundException("Vehicle No not found");
-		}
+		} 
 	}
 	
 	//---------------------------------Add New Vehicle----------------------------------------

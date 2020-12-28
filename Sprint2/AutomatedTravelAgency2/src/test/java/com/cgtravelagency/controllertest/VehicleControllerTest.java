@@ -1,36 +1,21 @@
 package com.cgtravelagency.controllertest;
 
-<<<<<<< HEAD
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-=======
->>>>>>> branch 'master' of https://github.com/shahishrishti/AutomatedTravelAgency.git
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-<<<<<<< HEAD
-import org.springframework.http.ResponseEntity;
-=======
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
->>>>>>> branch 'master' of https://github.com/shahishrishti/AutomatedTravelAgency.git
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import com.cgtravelagency.controller.VehicleController;
-<<<<<<< HEAD
 import com.cgtravelagency.json.Route;
-=======
->>>>>>> branch 'master' of https://github.com/shahishrishti/AutomatedTravelAgency.git
 import com.cgtravelagency.json.Vehicle;
 import com.cgtravelagency.json.VehicleType;
 
-<<<<<<< HEAD
-
-=======
-@SpringBootTest
->>>>>>> branch 'master' of https://github.com/shahishrishti/AutomatedTravelAgency.git
 class VehicleControllerTest {
 
 	@Autowired
@@ -38,12 +23,11 @@ class VehicleControllerTest {
 	private static Logger logger;
 	private static RestTemplate restTemplate;
 	
-	VehicleController vehicleController = new VehicleController();
-	
 	@BeforeAll
 	public static void setUp() {
 		logger = LogManager.getLogger(VehicleControllerTest.class.getName());
 		restTemplate = new RestTemplate();
+		vehicleController = new VehicleController();
 	}
 	
 	@Test
@@ -59,10 +43,21 @@ class VehicleControllerTest {
 	void testDeleteByBlankVehicleNo() {
 		
 		logger.info("[START] Test to Delete by Blank Vehicle No");
-		Exception exception = assertThrows(NullPointerException.class, () -> {
-			vehicleController.deleteVehicle("");
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
+			restTemplate.delete("http://localhost:9090/cgata/vehicle/\"\"", Vehicle.class);
 		});
-		logger.info("[END] Test to Delete by Valid Vehicle No");
+		logger.info("[END] Test to Delete by Blank Vehicle No");
+		
+	}
+	
+	@Test
+	void testDeleteByInvalidVehicleNo() {
+		
+		logger.info("[START] Test to Delete by Invalid Vehicle No");
+		Exception exception = assertThrows(org.springframework.web.client.HttpClientErrorException.BadRequest.class, () -> {
+			restTemplate.delete("http://localhost:9090/cgata/vehicle/MH###", Vehicle.class);
+		});
+		logger.info("[END] Test to Delete by Invalid Vehicle No");
 		
 	}
 	
