@@ -95,6 +95,8 @@ public class VehicleController {
 		})
 		@GetMapping(value="/vehicle", produces=MediaType.APPLICATION_JSON_VALUE) 
 		public List<Vehicle> getAllVehicles() throws VehicleNotFoundException {
+			logger.info("View all vehicle service started..");
+			
 			return vehicleService.getAllVehicles();
 		}
 		
@@ -107,7 +109,11 @@ public class VehicleController {
 		@GetMapping(value="/vehicle/{vehicleName}/filter", produces=MediaType.APPLICATION_JSON_VALUE)
 		public List<Vehicle> getVehicleByName(@PathVariable String vehicleName) throws VehicleNotFoundException
 		{
+			
+				logger.info("Finding Vehicle with Vehicle Name");
+			
 			return vehicleService.getVehicleByName(vehicleName);
+			
 		}
 		
 	//------------------View Vehicle By No------------------------------------------
@@ -119,6 +125,8 @@ public class VehicleController {
 		@GetMapping(value="/vehicle/{vehicleNo}", produces=MediaType.APPLICATION_JSON_VALUE)
 		public Vehicle getVehicleByNo(@PathVariable String vehicleNo) throws VehicleNotFoundException
 		{
+			logger.info("Finding Vehicle with Vehicle No");
+			
 			return vehicleService.getVehicleByNo(vehicleNo);
 		}
 		
@@ -131,6 +139,8 @@ public class VehicleController {
 		@GetMapping(value="/vehicle/{fare}/filters", produces=MediaType.APPLICATION_JSON_VALUE)
 		public List<Vehicle> getVehicleByFare(@PathVariable double fare) throws VehicleNotFoundException
 		{
+			logger.info("Finding Vehicle with Fare per Km");
+			
 			return vehicleService.getVehicleByFare(fare);
 		}
 		
