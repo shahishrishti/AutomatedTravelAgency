@@ -9,6 +9,17 @@ import com.cgtravelagency.entity.RouteEntity;
 
 public interface RouteRepo extends JpaRepository<RouteEntity, Long>{
 
-	@Query("Select concat(route.source, ' - ', route.destination) from RouteEntity route")
-	public List<String> getAllSourceAndDestination();
+	
+
+
+	public List<RouteEntity> findBySource(String source);
+
+	public List<RouteEntity> findByDestination(String destination);
+
+	public List<RouteEntity> findByDistance(double distance);
+
+	public List<RouteEntity> findBySourceAndDestination(String source, String destination);
+	
+	
+	
 }

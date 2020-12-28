@@ -7,7 +7,7 @@ import com.cgtravelagency.json.Driver;
 
 public class DriverServiceImpl implements DriverService {
 
-	@Override
+/*	@Override
 	public List<Driver> getAllDrivers() throws InvalidDriverDataException {
 		// TODO Auto-generated method stub
 		return null;
@@ -35,6 +35,6 @@ public class DriverServiceImpl implements DriverService {
 	public List<Driver> getDriverByLicenseNo(String licenseNo) throws InvalidDriverDataException {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 
 }

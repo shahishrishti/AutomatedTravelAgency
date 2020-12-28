@@ -7,7 +7,7 @@ import com.cgtravelagency.json.Driver;
 
 public interface DriverService {
 
-	public List<Driver> getAllDrivers()throws  InvalidDriverDataException;
+	/*public List<Driver> getAllDrivers()throws  InvalidDriverDataException;
 	
 	public Driver createNewDriver( Driver driver)throws  InvalidDriverDataException;
 
@@ -15,6 +15,6 @@ public interface DriverService {
 
 	public List<Driver> getDriverByVehicleNo(String vehicleNo)throws  InvalidDriverDataException;
 
-	public List<Driver> getDriverByLicenseNo(String licenseNo)throws  InvalidDriverDataException;
+	public List<Driver> getDriverByLicenseNo(String licenseNo)throws  InvalidDriverDataException;*/
 
 }
