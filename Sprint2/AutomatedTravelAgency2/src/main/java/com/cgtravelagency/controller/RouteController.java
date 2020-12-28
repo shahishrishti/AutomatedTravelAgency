@@ -21,9 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cgtravelagency.exception.InvalidRouteDataException;
-import com.cgtravelagency.exception.VehicleNotFoundException;
+
 import com.cgtravelagency.json.Route;
-import com.cgtravelagency.json.Vehicle;
 import com.cgtravelagency.service.RouteService;
 
 import io.swagger.annotations.Api;
