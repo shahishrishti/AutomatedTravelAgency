@@ -1,24 +1,25 @@
 package com.cgtravelagency.service;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cgtravelagency.entity.RouteEntity;
-import com.cgtravelagency.entity.VehicleEntity;
 import com.cgtravelagency.exception.InvalidRouteDataException;
 import com.cgtravelagency.json.Route;
 import com.cgtravelagency.repo.RouteRepo;
 import com.cgtravelagency.util.RouteUtil;
-import com.cgtravelagency.util.VehicleUtil;
 
 @Service
 public class RouteServiceImpl implements RouteService {
 
 	@Autowired
 	private RouteRepo routeRepo;
-	
+	private Logger logger = LogManager.getLogger(VehicleServiceImpl.class.getName());
 	
 
 	@Override
@@ -55,5 +56,39 @@ public class RouteServiceImpl implements RouteService {
 		// TODO Auto-generated method stub
 		return RouteUtil.convertRouteEntityListIntoRouteList(routeRepo.findAll());
 	}
+	
+	//-------------------------------------------------Update Route----------------------------------------------//
+		@Override
+		public Route updateRoute(Long routeid, Route route) throws InvalidRouteDataException {
+			logger.info("Update Route from service");
+			Optional<RouteEntity> opRouteEntity = routeRepo.findById(routeid);
+			if(opRouteEntity.isPresent()) {
+				RouteEntity routeEntity = opRouteEntity.get();
+				routeEntity.setSource(route.getSource());
+				routeEntity.setDestination(route.getDestination());
+				routeEntity.setDistance(route.getDistance());
+				routeEntity = routeRepo.save(routeEntity);
+				return RouteUtil.convertRouteEntityIntoRoute(routeEntity);
+			} else {
+				logger.error("RouteId not found");
+				throw new InvalidRouteDataException("RouteId not found");
+			}
+		}
+
+		//-----------------------------------------------Delete Route----------------------------//
+
+		@Override
+		public Route deleteRoute(Long routeid) throws InvalidRouteDataException {
+			logger.info("Delete Route from service");
+			Optional<RouteEntity> opRouteEntity = routeRepo.findById(routeid);
+			if(opRouteEntity.isPresent()) {
+				RouteEntity routeEntity = opRouteEntity.get();
+				routeRepo.deleteById(routeid);
+				return RouteUtil.convertRouteEntityIntoRoute(routeEntity);
+			} else {
+				logger.error("RouteId not found");
+				throw new InvalidRouteDataException("RouteId not found");
+			}
+		}
 
 }

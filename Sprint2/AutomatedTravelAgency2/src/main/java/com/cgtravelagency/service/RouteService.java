@@ -18,4 +18,7 @@ public interface RouteService {
 	
 	public Route createNewRoute(@Valid Route route);
 	public List<Route> getAllRoutes();
+	
+	public Route updateRoute(Long routeId, Route route) throws InvalidRouteDataException;
+	public Route deleteRoute(Long routeid) throws InvalidRouteDataException;
 }
