@@ -11,6 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.data.annotation.CreatedDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "booking")
@@ -22,9 +28,14 @@ public class BookingEntity {
 	private Long bookingId;
 	
 	@Column(name = "journeydate")
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date journeyDate;
 	
 	@Column(name = "bookingdate")
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(pattern="yyyy-MM-dd")
+	@CreatedDate
 	private Date bookingDate;
 	
 	@Column(name = "canceldate")

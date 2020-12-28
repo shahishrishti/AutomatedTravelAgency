@@ -7,8 +7,6 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.util.RouteMatcher.Route;
-
 import io.swagger.annotations.ApiModelProperty;
 
 public class Booking {
@@ -80,8 +78,7 @@ public class Booking {
 		this.route = route;
 	}
 
-	public Booking(Long bookingId, Date journeyDate, Date bookingDate, Date cancelDate, double fare,
-			String bookingStatus, String vehicleType, com.cgtravelagency.json.Route route) {
+	public Booking(Long bookingId, Date journeyDate, Date bookingDate, Date cancelDate, double fare, String bookingStatus, String vehicleType) {
 		super();
 		this.bookingId = bookingId;
 		this.journeyDate = journeyDate;
@@ -90,7 +87,6 @@ public class Booking {
 		this.fare = fare;
 		this.bookingStatus = bookingStatus;
 		this.vehicleType = vehicleType;
-		this.route = (Route) route;
 	}
 
 	public Long getBookingId() {
