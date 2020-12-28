@@ -7,11 +7,14 @@ import javax.validation.Valid;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +24,7 @@ import com.cgtravelagency.exception.InvalidVehicleDataException;
 import com.cgtravelagency.exception.VehicleNotFoundException;
 import com.cgtravelagency.json.Vehicle;
 import com.cgtravelagency.service.VehicleService;
+
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -64,6 +68,25 @@ public class VehicleController {
 		return vehicleService.deleteVehicle(vehicleNo);
 	}
 	
+	//-------------------------Add vehicle--------------------------------------------
+	@ApiOperation(value="Add New Vehicle")
+	@ApiResponses(value= {
+			@ApiResponse(code=201, message="New vehicle added")
+			
+	})
+	@PostMapping(value="/vehicle/add", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Vehicle> createNewEmployee(@Valid @RequestBody Vehicle vehicle) throws InvalidVehicleDataException {
+		try {
+			logger.info("Add Vehicle Called!!");
+		return new ResponseEntity<Vehicle>(vehicleService.createNewVehicle(vehicle), HttpStatus.OK);
+		} catch(InvalidVehicleDataException invalidVehicleDataException)
+		{
+			logger.error(invalidVehicleDataException.getLocalizedMessage());
+			return null;
+		}
+	}
+	
+	
 	//-------------------View all Vehicles-------------------------------------------
 		@ApiOperation(value="Returns all vehicles")
 		@ApiResponses(value= {
@@ -103,11 +126,24 @@ public class VehicleController {
 		@ApiOperation(value="Returns vehicle By No")
 		@ApiResponses(value= {
 				@ApiResponse(code=200, message="Vehicles found with fare"),
-				@ApiResponse(code=404, message="No such vehicle found")
+				@ApiResponse(code=404, message="No such vehicles found")
 		})
 		@GetMapping(value="/vehicle/{fare}/filters", produces=MediaType.APPLICATION_JSON_VALUE)
 		public List<Vehicle> getVehicleByFare(@PathVariable double fare) throws VehicleNotFoundException
 		{
 			return vehicleService.getVehicleByFare(fare);
 		}
+		
+		/*-------------View Vehicle By Seating capacity------------------------------
+		@ApiOperation(value="Returns vehicle By No")
+		@ApiResponses(value= {
+				@ApiResponse(code=200, message="Vehicles found with fare"),
+				@ApiResponse(code=404, message="No such vehicles found")
+		})
+		@GetMapping(value="/vehicle/{seatingCapacity}/filtering", produces=MediaType.APPLICATION_JSON_VALUE)
+		public List<Vehicle> getVehicleBySeatingCapacity(@PathVariable int seatingCapacity) throws VehicleNotFoundException
+		{
+			return vehicleService.getVehicleBySeatingCapacity(seatingCapacity);
+		}*/
+		
 }

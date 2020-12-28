@@ -2,6 +2,8 @@ package com.cgtravelagency.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.cgtravelagency.exception.InvalidVehicleDataException;
 import com.cgtravelagency.exception.VehicleNotFoundException;
 import com.cgtravelagency.json.Vehicle;
@@ -17,5 +19,9 @@ public interface VehicleService {
 	public Vehicle getVehicleByNo(String vehicleNo) throws VehicleNotFoundException;
 
 	public List<Vehicle> getVehicleByFare(double fare) throws VehicleNotFoundException;
+	
+	//public List<Vehicle> getVehicleBySeatingCapacity(int seatingCapacity)  throws VehicleNotFoundException;
+	
+	public Vehicle createNewVehicle(@Valid Vehicle vehicle) throws InvalidVehicleDataException;
 	
 } 
